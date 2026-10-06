@@ -110,15 +110,15 @@ body::before{
 .sc-meters{padding:12px 18px;background:rgba(0,0,0,.25);border-bottom:1px solid var(--border)}
 .sc-m-title{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:var(--sub);margin-bottom:8px;text-transform:uppercase}
 .sc-bar-row{display:flex;align-items:center;gap:7px;margin-bottom:6px}
-.sc-bar-lbl{font-family:var(--mono);font-size:.58rem;color:var(--sub);width:120px;flex-shrink:0;line-height:1.3}
-@media(max-width:400px){.sc-bar-lbl{width:90px;font-size:.54rem}}
 .sc-bar-track{flex:1;height:18px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden;border:1px solid var(--border)}
-.sc-bar-fill{height:100%;border-radius:3px;display:flex;align-items:center;padding:0 6px;font-family:var(--mono);font-size:.54rem;color:rgba(255,255,255,.8);width:0;transition:width 1.4s cubic-bezier(.22,.68,0,1.2);white-space:nowrap;overflow:hidden}
+.sc-bar-fill{height:100%;border-radius:3px;display:block;width:0;transition:width 1.4s cubic-bezier(.22,.68,0,1.2);min-width:3px}
 .sc-bar-fill.red{background:rgba(230,57,70,.7)}
 .sc-bar-fill.blue{background:rgba(29,124,255,.7)}
 .sc-bar-fill.amber{background:rgba(244,166,20,.7)}
 .sc-bar-fill.green2{background:rgba(34,197,94,.7)}
-.sc-num{font-family:var(--mono);font-size:.6rem;color:var(--sub);width:28px;text-align:right;flex-shrink:0}
+.sc-num{font-family:var(--mono);font-size:.6rem;color:var(--sub);width:34px;text-align:right;flex-shrink:0}
+.sc-bar-lbl{font-family:var(--mono);font-size:.58rem;color:var(--sub);width:100px;flex-shrink:0;line-height:1.3}
+@media(max-width:400px){.sc-bar-lbl{width:76px;font-size:.53rem}}
 .sc-list{flex:1}
 .sc-item{padding:11px 18px;border-bottom:1px solid var(--border)}
 .sc-item:last-child{border-bottom:none}
@@ -169,28 +169,28 @@ body::before{
 .trump-note strong{color:var(--ink2)}
 
 /* ── VOTO REC ── */
-.voto-rec{padding:24px 22px;border-radius:var(--r);background:linear-gradient(135deg,rgba(230,57,70,.1),rgba(230,57,70,.04));border:1px solid rgba(230,57,70,.4);border-top:4px solid var(--esq);text-align:center;position:relative;overflow:hidden}
+.voto-rec{padding:24px 22px;border-radius:var(--r);background:linear-gradient(135deg,rgba(230,57,70,.1),rgba(230,57,70,.04));border:1px solid rgba(230,57,70,.4);border-top:4px solid var(--esq);text-align:center;position:relative;overflow:hidden;box-sizing:border-box;width:100%}
 .voto-rec::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(230,57,70,.08),transparent 70%)}
 .vr-tag{font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;color:var(--esq2);background:rgba(230,57,70,.1);border:1px solid rgba(230,57,70,.25);border-radius:4px;padding:3px 11px;display:inline-block;margin-bottom:14px}
-.vr-number{font-family:var(--head);font-size:clamp(3.5rem,11vw,7rem);letter-spacing:.04em;color:var(--esq);line-height:1}
-.vr-subtitle{font-family:var(--head);font-size:1.4rem;letter-spacing:.08em;color:#fff;margin-top:4px;margin-bottom:16px}
-.vr-body{font-size:.84rem;color:var(--ink2);line-height:1.75;max-width:580px;margin:0 auto}
+.vr-number{font-family:var(--head);font-size:clamp(2.8rem,9vw,5.5rem);letter-spacing:.04em;color:var(--esq);line-height:1}
+.vr-subtitle{font-family:var(--head);font-size:clamp(1rem,4vw,1.4rem);letter-spacing:.08em;color:#fff;margin-top:4px;margin-bottom:14px}
+.vr-body{font-size:clamp(.78rem,2.5vw,.84rem);color:var(--ink2);line-height:1.7;max-width:100%;margin:0 auto}
 .vr-body strong{color:#fff}
-.vr-reasons{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px;text-align:left}
-@media(max-width:560px){.vr-reasons{grid-template-columns:1fr}}
-.vr-reason{padding:10px 12px;background:rgba(230,57,70,.07);border:1px solid rgba(230,57,70,.18);border-radius:8px;font-size:.75rem;color:var(--ink2);line-height:1.5;display:flex;align-items:flex-start;gap:9px}
-.vr-dot{width:6px;height:6px;background:var(--esq);border-radius:50%;flex-shrink:0;margin-top:5px}
-.vr-caveat{margin-top:16px;padding:11px 14px;background:rgba(255,255,255,.04);border-radius:8px;font-family:var(--mono);font-size:.69rem;color:var(--sub);line-height:1.65;border:1px solid var(--border);text-align:left}
+.vr-reasons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;text-align:left}
+@media(max-width:520px){.vr-reasons{grid-template-columns:1fr}}
+.vr-reason{padding:9px 11px;background:rgba(230,57,70,.07);border:1px solid rgba(230,57,70,.18);border-radius:8px;font-size:clamp(.7rem,2.2vw,.76rem);color:var(--ink2);line-height:1.5;display:flex;align-items:flex-start;gap:8px}
+.vr-dot{width:6px;height:6px;min-width:6px;background:var(--esq);border-radius:50%;flex-shrink:0;margin-top:4px}
+.vr-caveat{margin-top:14px;padding:10px 12px;background:rgba(255,255,255,.04);border-radius:8px;font-family:var(--mono);font-size:clamp(.62rem,2vw,.69rem);color:var(--sub);line-height:1.65;border:1px solid var(--border);text-align:left}
 .vr-caveat strong{color:var(--ink2)}
-.voto-dois{padding:18px 20px;border-radius:var(--r);background:rgba(29,124,255,.05);border:1px solid rgba(29,124,255,.25)}
+.voto-dois{padding:16px 18px;border-radius:var(--r);background:rgba(29,124,255,.05);border:1px solid rgba(29,124,255,.25);box-sizing:border-box;width:100%}
 .vd-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--dir2);background:rgba(29,124,255,.1);border:1px solid rgba(29,124,255,.25);border-radius:4px;padding:3px 9px;display:inline-block;margin-bottom:9px}
-.vd-title{font-family:var(--head);font-size:1.05rem;letter-spacing:.06em;color:var(--dir2);margin-bottom:9px}
-.vd-body{font-size:.79rem;color:var(--ink2);line-height:1.7}
+.vd-title{font-family:var(--head);font-size:clamp(.95rem,3.5vw,1.05rem);letter-spacing:.06em;color:var(--dir2);margin-bottom:9px}
+.vd-body{font-size:clamp(.74rem,2.3vw,.79rem);color:var(--ink2);line-height:1.7}
 .vd-body strong{color:var(--dir2)}
 .vd-reasons{display:flex;flex-direction:column;gap:6px;margin-top:10px}
-.vd-reason{font-size:.76rem;color:var(--ink2);display:flex;align-items:flex-start;gap:9px}
-.vd-dot{width:5px;height:5px;background:var(--dir);border-radius:50%;flex-shrink:0;margin-top:7px}
-.vd-caveat{margin-top:10px;padding:9px 12px;background:rgba(255,255,255,.04);border-radius:7px;font-family:var(--mono);font-size:.67rem;color:var(--sub);line-height:1.6;border-left:2px solid var(--border2)}
+.vd-reason{font-size:clamp(.7rem,2.2vw,.76rem);color:var(--ink2);display:flex;align-items:flex-start;gap:8px}
+.vd-dot{width:5px;height:5px;min-width:5px;background:var(--dir);border-radius:50%;flex-shrink:0;margin-top:6px}
+.vd-caveat{margin-top:10px;padding:9px 12px;background:rgba(255,255,255,.04);border-radius:7px;font-family:var(--mono);font-size:clamp(.6rem,1.9vw,.67rem);color:var(--sub);line-height:1.6;border-left:2px solid var(--border2)}
 
 /* ── PLACAR ── */
 .placar-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
@@ -206,11 +206,13 @@ body::before{
 
 /* ── BARRAS ── */
 .bar-group{margin-top:12px}
-.bar-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-.bar-lbl{width:160px;font-family:var(--mono);font-size:.66rem;color:var(--sub);flex-shrink:0;line-height:1.3}
-@media(max-width:480px){.bar-lbl{width:110px;font-size:.6rem}}
-.bar-track{flex:1;height:24px;background:rgba(255,255,255,.04);border-radius:5px;overflow:hidden;border:1px solid var(--border)}
-.bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding:0 8px;font-family:var(--mono);font-size:.62rem;color:rgba(255,255,255,.8);width:0;transition:width 1.4s cubic-bezier(.22,.68,0,1.2);white-space:nowrap;overflow:hidden}
+.bar-row{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px}
+.bar-lbl{width:140px;font-family:var(--mono);font-size:.64rem;color:var(--sub);flex-shrink:0;line-height:1.3;padding-top:4px}
+@media(max-width:480px){.bar-lbl{width:88px;font-size:.57rem}}
+@media(max-width:360px){.bar-lbl{width:70px;font-size:.53rem}}
+.bar-track{flex:1;height:22px;background:rgba(255,255,255,.04);border-radius:5px;overflow:hidden;border:1px solid var(--border);align-self:center;flex-shrink:0}
+.bar-fill{height:100%;border-radius:4px;display:block;width:0;transition:width 1.4s cubic-bezier(.22,.68,0,1.2);min-width:3px}
+.bar-label-out{font-family:var(--mono);font-size:.57rem;color:var(--sub);white-space:normal;line-height:1.35;word-break:break-word;padding-top:4px}
 .bar-fill.red{background:rgba(230,57,70,.75)}
 .bar-fill.blue{background:rgba(29,124,255,.75)}
 .bar-fill.gold{background:rgba(244,166,20,.75)}
@@ -397,7 +399,10 @@ footer{margin-top:60px;border-top:1px solid var(--border);padding-top:18px;font-
   .sc-meters{padding:10px 12px}
   .sc-list .sc-item{padding:9px 12px}
   .trump-card,.pior-box,.vocaro-card{padding:12px 12px}
-  .voto-rec{padding:16px 12px}
+  .voto-rec{padding:14px 10px}
+  .voto-dois{padding:12px 10px}
+  .vr-reasons{gap:6px}
+  .vr-reason{padding:8px 9px}
   .bar-lbl{width:90px;font-size:.58rem}
   .bar-fill{font-size:.56rem;padding:0 5px}
   .gov-card-uf{font-size:1.2rem}
@@ -1366,23 +1371,24 @@ footer{margin-top:60px;border-top:1px solid var(--border);padding-top:18px;font-
 <div class="sec">
   <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Posição Editorial — Para quem votar</span><div class="sec-line"></div></div>
 
-  <div class="voto-rec">
-    <div class="vr-tag">POSIÇÃO EDITORIAL BASEADA NOS FATOS LEVANTADOS</div>
-    <div class="vr-number">13</div>
-    <div class="vr-subtitle">Lula — PT</div>
-    <div class="vr-body">Com base nos fatos documentados: <strong>Lula apresenta o menor risco para o Brasil em outubro de 2026.</strong> Sem investigação criminal ativa. Defende a soberania nacional. Histórico de corrupção grave — mas condenações anuladas por vício processual. Flávio chega com investigação ativa da PF, padrão ético grave e declarações comprometendo recursos estratégicos do Brasil.</div>
-    <div class="vr-reasons">
-      <div class="vr-reason"><div class="vr-dot"></div><span>Sem investigação criminal ativa em 2026. Flávio tem a investigação Dark Horse da PF em curso.</span></div>
-      <div class="vr-reason"><div class="vr-dot"></div><span>Não prometeu entregar minerais críticos a potência estrangeira. Flávio fez essa declaração na CPAC.</span></div>
-      <div class="vr-reason"><div class="vr-dot"></div><span>Nunca assinou recurso para proteger PM que matou criança de 5 anos. Flávio assinou.</span></div>
-      <div class="vr-reason"><div class="vr-dot"></div><span>3 mandatos presidenciais com experiência executiva real. Flávio nunca governou no executivo.</span></div>
-    </div>
-    <div class="vr-caveat">
-      <strong>Este não é um endosso sem ressalvas.</strong> Lula governou durante o Mensalão e o Petrolão. Apoiou regimes autoritários. A escolha é entre dois candidatos imperfeitos. Esta análise indica que os riscos de Flávio são mais imediatos para o futuro do país.
-    </div>
-  </div>
+  <div style="max-width:660px;margin:0 auto;display:flex;flex-direction:column;gap:14px">
 
-  <div style="margin-top:14px">
+    <div class="voto-rec">
+      <div class="vr-tag">POSIÇÃO EDITORIAL BASEADA NOS FATOS LEVANTADOS</div>
+      <div class="vr-number">13</div>
+      <div class="vr-subtitle">Lula — PT</div>
+      <div class="vr-body">Com base nos fatos documentados: <strong>Lula apresenta o menor risco para o Brasil em outubro de 2026.</strong> Sem investigação criminal ativa. Defende a soberania nacional. Histórico de corrupção grave — mas condenações anuladas por vício processual. Flávio chega com investigação ativa da PF, padrão ético grave e declarações comprometendo recursos estratégicos do Brasil.</div>
+      <div class="vr-reasons">
+        <div class="vr-reason"><div class="vr-dot"></div><span>Sem investigação criminal ativa em 2026. Flávio tem a investigação Dark Horse da PF em curso.</span></div>
+        <div class="vr-reason"><div class="vr-dot"></div><span>Não prometeu entregar minerais críticos a potência estrangeira. Flávio fez essa declaração na CPAC.</span></div>
+        <div class="vr-reason"><div class="vr-dot"></div><span>Nunca assinou recurso para proteger PM que matou criança de 5 anos. Flávio assinou.</span></div>
+        <div class="vr-reason"><div class="vr-dot"></div><span>3 mandatos presidenciais com experiência executiva real. Flávio nunca governou no executivo.</span></div>
+      </div>
+      <div class="vr-caveat">
+        <strong>Este não é um endosso sem ressalvas.</strong> Lula governou durante o Mensalão e o Petrolão. Apoiou regimes autoritários. A escolha é entre dois candidatos imperfeitos. Esta análise indica que os riscos de Flávio são mais imediatos para o futuro do país.
+      </div>
+    </div>
+
     <div class="voto-dois">
       <div class="vd-tag">ARGUMENTOS PARA VOTAR NO 22</div>
       <div class="vd-title">Flávio Bolsonaro — PL</div>
@@ -1395,6 +1401,7 @@ footer{margin-top:60px;border-top:1px solid var(--border);padding-top:18px;font-
       </div>
       <div class="vd-caveat">⚠ Riscos do voto 22: investigação ativa da PF; declarações sobre soberania e Trump; padrão ético documentado (Ana Clara, juíza Acioli); fiador preso (Jair Bolsonaro).</div>
     </div>
+
   </div>
 </div>
 
@@ -1503,6 +1510,30 @@ function animAllBars(){
   }
   drawRadar();
   window.addEventListener('resize', drawRadar);
+})();
+
+// ── BAR LABEL FIX ──
+(function(){
+  // Move text from inside bar-fill to a span after the track (always visible)
+  document.querySelectorAll('.bar-fill').forEach(function(fill){
+    const txt = fill.textContent.trim();
+    fill.textContent = '';
+    const track = fill.parentElement; // .bar-track
+    const row = track ? track.parentElement : null; // .bar-row
+    if(row && txt){
+      // Remove existing .bar-num if present
+      const num = row.querySelector('.bar-num');
+      if(num) num.remove();
+      const span = document.createElement('span');
+      span.className = 'bar-label-out';
+      span.textContent = txt;
+      row.appendChild(span);
+    }
+  });
+  // sc-bar: just clear text from inside the fill bar (score stays in .sc-num)
+  document.querySelectorAll('.sc-bar-fill').forEach(function(fill){
+    fill.textContent = '';
+  });
 })();
 
 // ── GOVERNOR FILTER ──
