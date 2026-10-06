@@ -332,15 +332,88 @@ footer{margin-top:60px;border-top:1px solid var(--border);padding-top:18px;font-
 ::-webkit-scrollbar-track{background:var(--bg2)}
 ::-webkit-scrollbar-thumb{background:#3b2f6e;border-radius:3px}
 
+/* ── GOVERNOR CARDS ── */
+.gov-search{
+  width:100%;padding:10px 14px;background:rgba(255,255,255,.05);
+  border:1px solid var(--border2);border-radius:8px;color:var(--ink);
+  font-family:var(--mono);font-size:.78rem;outline:none;margin-bottom:16px;
+  transition:border-color .2s;
+}
+.gov-search:focus{border-color:var(--gold)}
+.gov-search::placeholder{color:var(--sub)}
+.gov-filter-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.gov-filter{
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;
+  padding:5px 12px;border-radius:20px;cursor:pointer;border:1px solid var(--border2);
+  background:transparent;color:var(--sub);transition:all .2s;white-space:nowrap;
+}
+.gov-filter:hover{border-color:var(--gold);color:var(--gold)}
+.gov-filter.on{background:rgba(244,166,20,.12);border-color:rgba(244,166,20,.5);color:var(--gold)}
+.gov-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px;
+}
+@media(max-width:600px){.gov-stats{grid-template-columns:repeat(2,1fr)}}
+.gov-stat{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:12px;text-align:center}
+.gov-stat-num{font-family:var(--head);font-size:2rem;line-height:1}
+.gov-stat-lbl{font-family:var(--mono);font-size:.58rem;color:var(--sub);margin-top:4px;line-height:1.4}
+.gov-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:12px;
+}
+@media(max-width:360px){.gov-grid{grid-template-columns:1fr}}
+.gov-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--r);overflow:hidden;
+  transition:border-color .2s;
+}
+.gov-card:hover{border-color:var(--border2)}
+.gov-card.partido-E{border-left:3px solid var(--esq)}
+.gov-card.partido-D{border-left:3px solid var(--dir)}
+.gov-card.partido-C{border-left:3px solid var(--gold)}
+.gov-card-head{padding:12px 14px;border-bottom:1px solid var(--border)}
+.gov-card-uf{font-family:var(--head);font-size:1.4rem;letter-spacing:.06em;color:#fff;display:inline-block;margin-right:6px}
+.gov-card-estado{font-family:var(--mono);font-size:.6rem;color:var(--sub);letter-spacing:.04em}
+.gov-card-nome{font-family:var(--body);font-size:.86rem;font-weight:600;color:var(--ink);margin-top:5px}
+.gov-card-body{padding:10px 14px;display:flex;flex-direction:column;gap:7px}
+.gov-card-row{display:flex;align-items:flex-start;gap:8px;font-size:.74rem;color:var(--ink2);line-height:1.4}
+.gov-card-lbl{font-family:var(--mono);font-size:.58rem;color:var(--sub);width:52px;flex-shrink:0;padding-top:1px}
+.gov-card-val{flex:1}
+.gov-partido-badge{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:2px 7px;border-radius:3px;border:1px solid}
+.gov-partido-badge.E{background:var(--esq-dim);border-color:rgba(230,57,70,.3);color:var(--esq2)}
+.gov-partido-badge.D{background:var(--dir-dim);border-color:rgba(29,124,255,.3);color:var(--dir2)}
+.gov-partido-badge.C{background:var(--gold-dim);border-color:rgba(244,166,20,.3);color:var(--gold)}
+.gov-alert{display:inline-block;font-family:var(--mono);font-size:.54rem;padding:2px 7px;border-radius:3px;margin-top:4px}
+.gov-alert.ok{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);color:#4ade80}
+.gov-alert.warn{background:rgba(244,166,20,.08);border:1px solid rgba(244,166,20,.3);color:#fbbf24}
+.gov-alert.danger{background:rgba(230,57,70,.1);border:1px solid rgba(230,57,70,.3);color:var(--esq2)}
+.gov-no-results{text-align:center;padding:48px 20px;font-family:var(--mono);font-size:.78rem;color:var(--sub);display:none}
+
 /* ── MOBILE ── */
 @media(max-width:480px){
-  .wrap{padding:0 12px 80px}
-  .hero{padding:36px 0 28px}
-  .sec{margin-top:36px}
-  .sc-meters{padding:10px 14px}
-  .sc-list .sc-item{padding:9px 14px}
-  .trump-card,.pior-box,.vocaro-card{padding:14px 14px}
-  .voto-rec{padding:18px 14px}
+  .wrap{padding:0 10px 80px}
+  .hero{padding:30px 0 22px}
+  .sec{margin-top:28px}
+  .sc-meters{padding:10px 12px}
+  .sc-list .sc-item{padding:9px 12px}
+  .trump-card,.pior-box,.vocaro-card{padding:12px 12px}
+  .voto-rec{padding:16px 12px}
+  .bar-lbl{width:90px;font-size:.58rem}
+  .bar-fill{font-size:.56rem;padding:0 5px}
+  .gov-card-uf{font-size:1.2rem}
+  .gov-card-nome{font-size:.82rem}
+  .gov-card-row{font-size:.7rem}
+  .podres-col-head{font-size:.78rem}
+  .pl-num{font-size:2.2rem}
+  .poder-num{font-size:2rem}
+  .pcard{padding:14px}
+  .info-box{padding:11px 12px}
+}
+@media(max-width:360px){
+  .gov-grid{grid-template-columns:1fr}
+  .gov-stats{grid-template-columns:1fr 1fr}
+  .bar-lbl{width:80px;font-size:.55rem}
+  .nav-tab{padding:10px 10px;font-size:.58rem}
 }
 </style>
 </head>
@@ -352,7 +425,7 @@ footer{margin-top:60px;border-top:1px solid var(--border);padding-top:18px;font-
   <button class="nav-tab" onclick="showTab('tab-propostas',this)">📋 Propostas</button>
   <button class="nav-tab" onclick="showTab('tab-vocaro',this)">🔥 Vocaro</button>
   <button class="nav-tab" onclick="showTab('tab-presidentes',this)">🇧🇷 Presidentes</button>
-  <button class="nav-tab" onclick="showTab('tab-governadores',this)">🏛 Governadores RJ</button>
+  <button class="nav-tab" onclick="showTab('tab-governadores',this)">🏛 Governadores BR</button>
   <button class="nav-tab" onclick="showTab('tab-tempo',this)">⏱ Tempo no Poder</button>
   <button class="nav-tab" onclick="showTab('tab-voto',this)">🗳 Voto</button>
 </div>
@@ -701,11 +774,407 @@ footer{margin-top:60px;border-top:1px solid var(--border);padding-top:18px;font-
 </div><!-- end tab-presidentes -->
 
 <!-- ══════════════════════════════════════════ -->
-<!-- TAB 5 — GOVERNADORES RJ -->
+<!-- TAB 5 — GOVERNADORES BRASIL -->
 <!-- ══════════════════════════════════════════ -->
 <div id="tab-governadores" class="tab-panel">
 <div class="sec">
-  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Governadores do Rio de Janeiro — 1982–2026</span><div class="sec-line"></div></div>
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Governadores — Todos os Estados (2026)</span><div class="sec-line"></div></div>
+  <p style="font-family:var(--mono);font-size:.7rem;color:var(--sub);margin-bottom:16px">27 governadores em exercício · outubro 2026 · mandato 2023–2027</p>
+
+  <!-- STATS -->
+  <div class="gov-stats">
+    <div class="gov-stat"><div class="gov-stat-num" style="color:var(--dir)">15</div><div class="gov-stat-lbl">Governadores<br>Direita/Centro-D</div></div>
+    <div class="gov-stat"><div class="gov-stat-num" style="color:var(--esq)">10</div><div class="gov-stat-lbl">Governadores<br>Esquerda/Centro-E</div></div>
+    <div class="gov-stat"><div class="gov-stat-num" style="color:var(--gold)">2</div><div class="gov-stat-lbl">Governadores<br>Centro</div></div>
+    <div class="gov-stat"><div class="gov-stat-num" style="color:var(--esq2)">4</div><div class="gov-stat-lbl">Investigados<br>ou processos</div></div>
+  </div>
+
+  <!-- BUSCA E FILTROS -->
+  <input class="gov-search" id="govSearch" type="text" placeholder="🔍  Buscar por estado, governador ou partido..." oninput="filterGov()">
+  <div class="gov-filter-row">
+    <button class="gov-filter on" onclick="setFilter('todos',this)">Todos (27)</button>
+    <button class="gov-filter" onclick="setFilter('D',this)">Direita / Centro-D</button>
+    <button class="gov-filter" onclick="setFilter('E',this)">Esquerda / Centro-E</button>
+    <button class="gov-filter" onclick="setFilter('C',this)">Centro</button>
+    <button class="gov-filter" onclick="setFilter('investigado',this)">⚠ Investigados</button>
+  </div>
+
+  <!-- GRID DE CARDS -->
+  <div class="gov-grid" id="govGrid">
+
+    <!-- NORTE -->
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Acre" data-uf="AC" data-nome="Gladson Cameli" data-partido="PP">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">AC</span><span class="gov-card-estado">— Acre</span>
+        <div class="gov-card-nome">Gladson Cameli</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge D">PP</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2019–2027 (reeleito 2022)</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Centro-Direita</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-E" data-espectro="E" data-estado="Amapá" data-uf="AP" data-nome="Clécio Luís" data-partido="Solidariedade">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">AP</span><span class="gov-card-estado">— Amapá</span>
+        <div class="gov-card-nome">Clécio Luís</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge E">Solidariedade</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2023–2027</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Centro-Esquerda</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-E" data-espectro="E" data-estado="Amazonas" data-uf="AM" data-nome="Wilson Lima" data-partido="União Brasil">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">AM</span><span class="gov-card-estado">— Amazonas</span>
+        <div class="gov-card-nome">Wilson Lima</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge E">União Brasil</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2019–2027 (reeleito 2022)</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Centro</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert warn">Investigado COVID-19 (TCE-AM)</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-E" data-espectro="E" data-estado="Pará" data-uf="PA" data-nome="Helder Barbalho" data-partido="MDB">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">PA</span><span class="gov-card-estado">— Pará</span>
+        <div class="gov-card-nome">Helder Barbalho</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge E">MDB</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2019–2027 (reeleito 2022)</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Centro-Esquerda</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos · COP30 Belém</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Rondônia" data-uf="RO" data-nome="Marcos Rocha" data-partido="União Brasil">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">RO</span><span class="gov-card-estado">— Rondônia</span>
+        <div class="gov-card-nome">Marcos Rocha</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge D">União Brasil</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2019–2027 (reeleito 2022)</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Direita</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Roraima" data-uf="RR" data-nome="Arthur Henrique" data-partido="MDB">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">RR</span><span class="gov-card-estado">— Roraima</span>
+        <div class="gov-card-nome">Arthur Henrique</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge D">MDB</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2023–2027</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Centro-Direita</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Tocantins" data-uf="TO" data-nome="Wanderlei Barbosa" data-partido="Republicanos">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">TO</span><span class="gov-card-estado">— Tocantins</span>
+        <div class="gov-card-nome">Wanderlei Barbosa</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge D">Republicanos</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2022–2027</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Direita</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+    <!-- NORDESTE -->
+    <div class="gov-card partido-E" data-espectro="E" data-estado="Alagoas" data-uf="AL" data-nome="Paulo Dantas" data-partido="MDB">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">AL</span><span class="gov-card-estado">— Alagoas</span>
+        <div class="gov-card-nome">Paulo Dantas</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge E">MDB</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2022–2027</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Centro-Esquerda</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert warn">Processo no TRE-AL (2022)</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Bahia" data-uf="BA" data-nome="Jerônimo Rodrigues" data-partido="PT">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">BA</span><span class="gov-card-estado">— Bahia</span>
+        <div class="gov-card-nome">Jerônimo Rodrigues</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge E">PT</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2023–2027</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Esquerda</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Ceará" data-uf="CE" data-nome="Elmano de Freitas" data-partido="PT">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">CE</span><span class="gov-card-estado">— Ceará</span>
+        <div class="gov-card-nome">Elmano de Freitas</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge E">PT</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2023–2027</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Esquerda</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Maranhão" data-uf="MA" data-nome="Carlos Brandão" data-partido="PSB">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">MA</span><span class="gov-card-estado">— Maranhão</span>
+        <div class="gov-card-nome">Carlos Brandão</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge E">PSB</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2022–2027</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Centro-Esquerda</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Assumiu após Dino (STF) · sem processos</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Paraíba" data-uf="PB" data-nome="João Azevêdo" data-partido="PSB">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">PB</span><span class="gov-card-estado">— Paraíba</span>
+        <div class="gov-card-nome">João Azevêdo</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge E">PSB</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2019–2027 (reeleito 2022)</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Centro-Esquerda</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Pernambuco" data-uf="PE" data-nome="Raquel Lyra" data-partido="PSDB">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">PE</span><span class="gov-card-estado">— Pernambuco</span>
+        <div class="gov-card-nome">Raquel Lyra</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge C">PSDB</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2023–2027</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Centro</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Piauí" data-uf="PI" data-nome="Rafael Fonteles" data-partido="PT">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">PI</span><span class="gov-card-estado">— Piauí</span>
+        <div class="gov-card-nome">Rafael Fonteles</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge E">PT</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2023–2027</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Esquerda</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Rio Grande do Norte" data-uf="RN" data-nome="Fátima Bezerra" data-partido="PT">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">RN</span><span class="gov-card-estado">— Rio Grande do Norte</span>
+        <div class="gov-card-nome">Fátima Bezerra</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge E">PT</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2019–2027 (reeleita 2022)</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Esquerda</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Sergipe" data-uf="SE" data-nome="Fábio Mitidieri" data-partido="PSD">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">SE</span><span class="gov-card-estado">— Sergipe</span>
+        <div class="gov-card-nome">Fábio Mitidieri</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge C">PSD</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2023–2027</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Centro</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+    <!-- CENTRO-OESTE -->
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Goiás" data-uf="GO" data-nome="Ronaldo Caiado" data-partido="União Brasil">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">GO</span><span class="gov-card-estado">— Goiás</span>
+        <div class="gov-card-nome">Ronaldo Caiado</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge D">União Brasil</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2019–2027 (reeleito 2022)</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Direita</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Pré-candidato à presidência 2026</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Mato Grosso" data-uf="MT" data-nome="Mauro Mendes" data-partido="União Brasil">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">MT</span><span class="gov-card-estado">— Mato Grosso</span>
+        <div class="gov-card-nome">Mauro Mendes</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge D">União Brasil</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2019–2027 (reeleito 2022)</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Direita</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Mato Grosso do Sul" data-uf="MS" data-nome="Eduardo Riedel" data-partido="PSDB">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">MS</span><span class="gov-card-estado">— Mato Grosso do Sul</span>
+        <div class="gov-card-nome">Eduardo Riedel</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge C">PSDB</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2023–2027</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Centro-Direita</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Distrito Federal" data-uf="DF" data-nome="Ibaneis Rocha" data-partido="MDB">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">DF</span><span class="gov-card-estado">— Distrito Federal</span>
+        <div class="gov-card-nome">Ibaneis Rocha</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge D">MDB</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2019–2027 (reeleito 2022)</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Centro-Direita</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert danger">Suspenso após 8/jan · retornou ao cargo (STF)</span></span></div>
+      </div>
+    </div>
+
+    <!-- SUDESTE -->
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Espírito Santo" data-uf="ES" data-nome="Renato Casagrande" data-partido="PSB">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">ES</span><span class="gov-card-estado">— Espírito Santo</span>
+        <div class="gov-card-nome">Renato Casagrande</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge E">PSB</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2019–2027 (reeleito 2022)</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Centro-Esquerda</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Minas Gerais" data-uf="MG" data-nome="Romeu Zema" data-partido="Novo">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">MG</span><span class="gov-card-estado">— Minas Gerais</span>
+        <div class="gov-card-nome">Romeu Zema</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge D">Novo</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2019–2027 (reeleito 2022)</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Direita / Liberal</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert warn">Estado em recuperação fiscal · TCU</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Rio de Janeiro" data-uf="RJ" data-nome="Cláudio Castro" data-partido="PL">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">RJ</span><span class="gov-card-estado">— Rio de Janeiro</span>
+        <div class="gov-card-nome">Cláudio Castro</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge D">PL</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2021–2027 (reeleito 2022)</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Direita</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert danger">Investigado PF 2024 · contratos saúde/educação</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="São Paulo" data-uf="SP" data-nome="Tarcísio de Freitas" data-partido="Republicanos">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">SP</span><span class="gov-card-estado">— São Paulo</span>
+        <div class="gov-card-nome">Tarcísio de Freitas</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge D">Republicanos</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2023–2027</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Direita</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Pré-candidato presidência 2026</span></span></div>
+      </div>
+    </div>
+
+    <!-- SUL -->
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Paraná" data-uf="PR" data-nome="Ratinho Junior" data-partido="PSD">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">PR</span><span class="gov-card-estado">— Paraná</span>
+        <div class="gov-card-nome">Ratinho Junior</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge D">PSD</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2019–2027 (reeleito 2022)</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Centro-Direita</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Rio Grande do Sul" data-uf="RS" data-nome="Eduardo Leite" data-partido="PSDB">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">RS</span><span class="gov-card-estado">— Rio Grande do Sul</span>
+        <div class="gov-card-nome">Eduardo Leite</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge C">PSDB</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2019–2027 (reeleito 2022)</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Centro-Direita</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Enchentes 2024 · gestão da crise</span></span></div>
+      </div>
+    </div>
+
+    <div class="gov-card partido-D" data-espectro="D" data-estado="Santa Catarina" data-uf="SC" data-nome="Jorginho Mello" data-partido="PL">
+      <div class="gov-card-head">
+        <span class="gov-card-uf">SC</span><span class="gov-card-estado">— Santa Catarina</span>
+        <div class="gov-card-nome">Jorginho Mello</div>
+      </div>
+      <div class="gov-card-body">
+        <div class="gov-card-row"><span class="gov-card-lbl">PARTIDO</span><span class="gov-card-val"><span class="gov-partido-badge D">PL</span></span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">MANDATO</span><span class="gov-card-val">2023–2027</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">ESPECTRO</span><span class="gov-card-val">Direita</span></div>
+        <div class="gov-card-row"><span class="gov-card-lbl">STATUS</span><span class="gov-card-val"><span class="gov-alert ok">Sem processos ativos</span></span></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="gov-no-results" id="govNoResults">Nenhum governador encontrado para esse filtro.</div>
+
+  <div class="info-box" style="margin-top:20px">
+    <div class="info-box-title">📊 PANORAMA 2026 — GOVERNADORES DO BRASIL</div>
+    <div class="info-box-body">
+      <strong>Direita/Centro-Direita:</strong> AC, DF, GO, MT, MS, PR, RJ, RO, RR, SC, SP, TO + aliados · <strong>~15 estados</strong><br>
+      <strong>Esquerda/Centro-Esquerda:</strong> AP, BA, CE, ES, MA, PB, PI, RN + aliados · <strong>~10 estados</strong><br>
+      <strong>Centro:</strong> MS (PSDB), PE (PSDB), SE (PSD), RS (PSDB) · <strong>~2–4 estados dependendo da classificação</strong><br>
+      <strong>Estado crítico RJ:</strong> 5 dos últimos 8 governadores presos ou sofreram impeachment — maior taxa do Brasil.
+    </div>
+  </div>
+</div>
+
+<!-- HISTÓRICO RJ EM DESTAQUE -->
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Destaque: Rio de Janeiro — Histórico 1983–2026</span><div class="sec-line"></div></div>
   <div class="chart-box" style="padding:0;overflow:hidden">
     <div class="table-wrap">
     <table class="gov-table">
@@ -717,55 +1186,18 @@ footer{margin-top:60px;border-top:1px solid var(--border);padding-top:18px;font-
         <tr><td>Marcello Alencar</td><td>1995–1999</td><td class="dur">4 anos</td><td><span class="ideo D">PSDB</span></td><td style="color:var(--sub);font-size:.71rem">Privatizações estaduais · período estável</td></tr>
         <tr><td>Anthony Garotinho <span class="flag2">⚠</span></td><td>1999–2002</td><td class="dur">3 anos</td><td><span class="ideo E">PDT→PSB</span></td><td style="color:var(--esq2);font-size:.71rem">Renunciou para concorrer · preso em 2016 (corrupção)</td></tr>
         <tr><td>Benedita da Silva</td><td>2002–2003</td><td class="dur">1 ano</td><td><span class="ideo E">PT</span></td><td style="color:var(--sub);font-size:.71rem">Assumiu após Garotinho · 1ª mulher gov. RJ</td></tr>
-        <tr class="record-row"><td>Rosinha Garotinho <span class="flag2">⚠</span></td><td>2003–2007</td><td class="dur">4 anos</td><td><span class="ideo E">PSB</span></td><td style="color:var(--esq2);font-size:.71rem">Presa em 2016. Família Garotinho: marido, filha, ex-gov · todos presos</td></tr>
-        <tr><td>Sérgio Cabral <span class="flag2">⚠</span></td><td>2007–2014</td><td class="dur">7 anos <span class="record-badge">+TEMPO</span></td><td><span class="ideo D">PMDB</span></td><td style="color:var(--esq2);font-size:.71rem">Preso 2016 · 14 anos + de reclusão · maior escândalo do RJ</td></tr>
-        <tr><td>Luiz Fernando Pezão <span class="flag2">⚠</span></td><td>2014–2018</td><td class="dur">4 anos</td><td><span class="ideo D">MDB</span></td><td style="color:var(--esq2);font-size:.71rem">Preso ao vivo em 2018 · lavagem e recebimento de propina</td></tr>
-        <tr><td>Wilson Witzel <span class="flag2">⚠</span></td><td>2019–2021</td><td class="dur">2 anos</td><td><span class="ideo D">PSC</span></td><td style="color:var(--esq2);font-size:.71rem">Impeachment 2021 por desvios na saúde durante COVID</td></tr>
-        <tr><td>Cláudio Castro</td><td>2021–2027</td><td class="dur">~6 anos</td><td><span class="ideo D">PL</span></td><td style="color:var(--sub);font-size:.71rem">Assumiu após Witzel · reeleito 2022 · investigado PF (2024)</td></tr>
+        <tr class="record-row"><td>Rosinha Garotinho <span class="flag2">⚠</span></td><td>2003–2007</td><td class="dur">4 anos</td><td><span class="ideo E">PSB</span></td><td style="color:var(--esq2);font-size:.71rem">Presa em 2016 · família toda presa</td></tr>
+        <tr><td>Sérgio Cabral <span class="flag2">⚠</span></td><td>2007–2014</td><td class="dur">7 anos <span class="record-badge">+TEMPO</span></td><td><span class="ideo D">PMDB</span></td><td style="color:var(--esq2);font-size:.71rem">Preso 2016 · 14+ anos de reclusão · maior escândalo RJ</td></tr>
+        <tr><td>Luiz Fernando Pezão <span class="flag2">⚠</span></td><td>2014–2018</td><td class="dur">4 anos</td><td><span class="ideo D">MDB</span></td><td style="color:var(--esq2);font-size:.71rem">Preso ao vivo em 2018 · lavagem e propina</td></tr>
+        <tr><td>Wilson Witzel <span class="flag2">⚠</span></td><td>2019–2021</td><td class="dur">2 anos</td><td><span class="ideo D">PSC</span></td><td style="color:var(--esq2);font-size:.71rem">Impeachment 2021 por desvios na saúde (COVID)</td></tr>
+        <tr><td>Cláudio Castro <span class="flag2">⚠</span></td><td>2021–2027</td><td class="dur">~6 anos</td><td><span class="ideo D">PL</span></td><td style="color:var(--sub);font-size:.71rem">Reeleito 2022 · investigado PF (2024) · em exercício</td></tr>
       </tbody>
     </table>
     </div>
   </div>
-</div>
-
-<div class="sec">
-  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Escândalos dos Governadores — Em detalhe</span><div class="sec-line"></div></div>
-
-  <div class="podres-grid">
-    <div class="podres-col G" style="border-top:2px solid #e63946">
-      <div class="podres-col-head" style="color:var(--esq2)">SÉRGIO CABRAL — O Maior Escândalo do RJ</div>
-      <div class="podre-item"><div class="podre-item-title" style="color:var(--esq2)">▸ PROPINA DE R$224 MILHÕES</div><div class="podre-item-body">Recebeu propina de construtoras, empreiteiras e empresas de saúde ao longo do governo. Mecanismo batizado de "clube" entre empreiteiras.</div><span class="bdg preso">PRESO · 14 anos de reclusão</span></div>
-      <div class="podre-item"><div class="podre-item-title" style="color:var(--esq2)">▸ DESVIO NAS OBRAS DA COPA E OLIMPÍADAS</div><div class="podre-item-body">Investigado pelo desvio de verbas nas obras do Maracanã, Porto Maravilha, BRT e infraestrutura olímpica. Superfaturamentos comprovados.</div><span class="bdg grave">Condenado</span></div>
-      <div class="podre-item"><div class="podre-item-title" style="color:var(--esq2)">▸ APARTAMENTO EM PARIS E CONTA NA SUÍÇA</div><div class="podre-item-body">PF encontrou apartamento de luxo em Paris e contas bancárias na Suíça com valores não declarados. Lavagem de dinheiro internacional.</div><span class="bdg preso">Condenado por lavagem</span></div>
-      <div class="podre-item"><div class="podre-item-title" style="color:var(--esq2)">▸ HELIODORO E OPERAÇÃO CHEQUINHO</div><div class="podre-item-body">Esquema de pagamento de propina via cheque para aliados políticos. Envolvia vereadores, deputados e secretários estaduais.</div><span class="bdg grave">Documentado · múltiplos condenados</span></div>
-    </div>
-
-    <div class="podres-col G" style="border-top:2px solid #f97316">
-      <div class="podres-col-head" style="color:#fb923c">WITZEL, PEZÃO & FAMÍLIA GAROTINHO</div>
-      <div class="podre-item"><div class="podre-item-title" style="color:#fb923c)">▸ WITZEL — DESVIOS NA COVID (2020)</div><div class="podre-item-body">PF investigou contratos suspeitos na saúde durante a pandemia. Sobrepreço em respiradores, hospitais de campanha e EPIs. TCE-RJ encontrou irregularidades.</div><span class="bdg preso">Impeachment · processo no STJ</span></div>
-      <div class="podre-item"><div class="podre-item-title" style="color:#fb923c">▸ PEZÃO — PRESO AO VIVO (2018)</div><div class="podre-item-body">Preso enquanto ainda era governador em exercício. Acusado de receber propina de empreiteiras desde o governo Cabral. Caso inédito na história do RJ.</div><span class="bdg preso">PRESO · condenado</span></div>
-      <div class="podre-item"><div class="podre-item-title" style="color:#fb923c">▸ GAROTINHO + ROSINHA — FAMÍLIA TODA PRESA</div><div class="podre-item-body">Anthony Garotinho preso em 2016 por compra de votos. Rosinha Garotinho (ex-governadora) presa pelo mesmo esquema. Primeira vez que um ex-casal de governadores é preso.</div><span class="bdg preso">Dois ex-governadores presos</span></div>
-      <div class="podre-item"><div class="podre-item-title" style="color:#fb923c">▸ CLÁUDIO CASTRO — INVESTIGADO (2024)</div><div class="podre-item-body">PF abriu inquérito em 2024 para apurar contratos suspeitos em saúde e educação. Governador atual afirma inocência. Investigação em andamento.</div><span class="bdg open">Investigação ativa 2024–2026</span></div>
-    </div>
-  </div>
-</div>
-
-<div class="sec">
-  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Quem mais tempo ficou no governo do RJ</span><div class="sec-line"></div></div>
-  <div class="chart-box">
-    <div style="font-family:var(--mono);font-size:.66rem;color:var(--sub);margin-bottom:12px">▸ Anos no governo estadual (1982–2026)</div>
-    <div class="bar-group" id="barsGov">
-      <div class="bar-row"><div class="bar-lbl">Sérgio Cabral</div><div class="bar-track"><div class="bar-fill red" data-w="88">7 anos · PRESO</div></div><div class="bar-num">7 anos</div></div>
-      <div class="bar-row"><div class="bar-lbl">Cláudio Castro</div><div class="bar-track"><div class="bar-fill blue" data-w="75">~6 anos · atual</div></div><div class="bar-num">~6 anos</div></div>
-      <div class="bar-row"><div class="bar-lbl">Leonel Brizola</div><div class="bar-track"><div class="bar-fill purple" data-w="88">7 anos (2 mandatos)</div></div><div class="bar-num">7 anos</div></div>
-      <div class="bar-row"><div class="bar-lbl">Marcello Alencar</div><div class="bar-track"><div class="bar-fill gold" data-w="50">4 anos</div></div><div class="bar-num">4 anos</div></div>
-      <div class="bar-row"><div class="bar-lbl">Luiz F. Pezão</div><div class="bar-track"><div class="bar-fill orange" data-w="50">4 anos · PRESO</div></div><div class="bar-num">4 anos</div></div>
-      <div class="bar-row"><div class="bar-lbl">Rosinha Garotinho</div><div class="bar-track"><div class="bar-fill red" data-w="50">4 anos · PRESA</div></div><div class="bar-num">4 anos</div></div>
-    </div>
-  </div>
   <div class="info-box" style="margin-top:14px">
-    <div class="info-box-title">📊 FATO ALARMANTE: RJ tem o pior histórico do Brasil</div>
-    <div class="info-box-body">Dos últimos <strong>6 governadores eleitos do Rio de Janeiro</strong>, <strong>4 foram presos ou sofreram processo de impeachment</strong>: Garotinho (preso), Rosinha (presa), Cabral (preso), Pezão (preso), Witzel (impeachment). Somente Marcello Alencar e Brizola completaram mandatos sem condenação. O Rio de Janeiro é o estado brasileiro com mais ex-governadores presos na história.</div>
+    <div class="info-box-title">📊 RJ TEM O PIOR HISTÓRICO DO BRASIL</div>
+    <div class="info-box-body">Dos últimos <strong>8 governadores eleitos do RJ</strong>, <strong>5 foram presos ou sofreram impeachment</strong>. Garotinho · Rosinha · Cabral · Pezão (presos) · Witzel (impeachment). O estado com mais ex-governadores presos da história republicana.</div>
   </div>
 </div>
 </div><!-- end tab-governadores -->
@@ -1072,6 +1504,35 @@ function animAllBars(){
   drawRadar();
   window.addEventListener('resize', drawRadar);
 })();
+
+// ── GOVERNOR FILTER ──
+let govFilter = 'todos';
+function setFilter(f, btn) {
+  govFilter = f;
+  document.querySelectorAll('.gov-filter').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  filterGov();
+}
+function filterGov() {
+  const q = (document.getElementById('govSearch').value || '').toLowerCase();
+  const cards = document.querySelectorAll('.gov-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const esp = card.dataset.espectro;
+    const text = (card.dataset.estado + card.dataset.nome + card.dataset.partido + card.dataset.uf).toLowerCase();
+    const hasAlert = card.querySelector('.gov-alert.danger, .gov-alert.warn');
+    const matchFilter =
+      govFilter === 'todos' ||
+      (govFilter === 'D' && esp === 'D') ||
+      (govFilter === 'E' && esp === 'E') ||
+      (govFilter === 'C' && esp === 'C') ||
+      (govFilter === 'investigado' && hasAlert);
+    const matchSearch = !q || text.includes(q);
+    if (matchFilter && matchSearch) { card.style.display = ''; visible++; }
+    else card.style.display = 'none';
+  });
+  document.getElementById('govNoResults').style.display = visible === 0 ? 'block' : 'none';
+}
 
 // ── LINE CHART ──
 (function(){
