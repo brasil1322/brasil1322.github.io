@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BRASIL — ENTRE O 13 E 22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06060d;--bg2:#0a0a14;--card:#0e0e1c;
+  --border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);
+  --esq:#e63946;--esq2:#ff6b6b;--esq-dim:rgba(230,57,70,.12);
+  --dir:#1d7cff;--dir2:#60a5fa;--dir-dim:rgba(29,124,255,.12);
+  --gold:#f4a614;--gold-dim:rgba(244,166,20,.12);
+  --green:#22c55e;--red:#ef4444;--purple:#a78bfa;
+  --ink:#e8eaf0;--ink2:#b0b8cc;--sub:#606880;
+  --mono:'IBM Plex Mono',monospace;
+  --head:'Bebas Neue',sans-serif;
+  --body:'IBM Plex Sans',sans-serif;
+  --r:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{
+  background:var(--bg);color:var(--ink);font-family:var(--body);
+  font-size:15px;line-height:1.6;overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 90% 50% at 20% 0%,rgba(230,57,70,.06),transparent 60%),
+    radial-gradient(ellipse 90% 50% at 80% 0%,rgba(29,124,255,.06),transparent 60%);
+}
+.wrap{max-width:1020px;margin:0 auto;padding:0 16px 100px;position:relative;z-index:1}
+
+/* ── NAV TABS ── */
+.nav-tabs{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:100;
+  background:rgba(6,6,13,.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  display:flex;gap:0;overflow-x:auto;
+  scrollbar-width:none;
+  padding:0 4px;
+}
+.nav-tabs::-webkit-scrollbar{display:none}
+.nav-tab{
+  flex-shrink:0;padding:12px 16px;
+  font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--sub);cursor:pointer;border-bottom:2px solid transparent;
+  transition:color .2s,border-color .2s;white-space:nowrap;
+  background:none;border-top:none;border-left:none;border-right:none;
+}
+.nav-tab:hover{color:var(--ink2)}
+.nav-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+@media(max-width:480px){.nav-tab{padding:11px 12px;font-size:.6rem}}
+
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+/* ── HERO ── */
+.hero{padding:48px 0 36px;text-align:center;border-bottom:1px solid var(--border)}
+.hero-stamp{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:.65rem;letter-spacing:.2em;color:var(--sub);
+  text-transform:uppercase;margin-bottom:20px;
+}
+.hero-stamp::before,.hero-stamp::after{content:'';width:30px;height:1px;background:var(--border2)}
+.hero-title{
+  font-family:var(--head);font-size:clamp(2.6rem,9vw,7rem);letter-spacing:.04em;
+  line-height:.95;margin-bottom:8px;color:#fff;
+}
+.hero-title span.t13{color:var(--esq)}
+.hero-title span.t22{color:var(--dir)}
+.hero-sub{font-family:var(--mono);font-size:.7rem;color:var(--sub);letter-spacing:.1em;margin-top:12px}
+.hero-bar{height:4px;margin:24px auto 0;max-width:380px;border-radius:4px;
+  background:linear-gradient(90deg,var(--esq),#ffffff22,var(--dir))}
+
+/* ── DISCLAIMER ── */
+.disclaimer{
+  margin-top:20px;padding:12px 16px;
+  background:rgba(139,92,246,.05);border:1px solid rgba(139,92,246,.2);
+  border-left:3px solid #7c3aed;border-radius:var(--r);
+  font-family:var(--mono);font-size:.72rem;color:var(--sub);line-height:1.7;
+}
+.disclaimer strong{color:var(--ink2)}
+
+/* ── SEC ── */
+.sec{margin-top:48px}
+.sec-hd{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.sec-pip{width:3px;height:20px;background:var(--gold);border-radius:2px;flex-shrink:0}
+.sec-lbl{font-family:var(--head);font-size:1rem;letter-spacing:.1em;color:var(--gold)}
+.sec-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border2),transparent)}
+
+/* ── CARDS ESCÂNDALOS ── */
+.scandal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:660px){.scandal-grid{grid-template-columns:1fr}}
+.sc-card{border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.sc-card.L{border:1px solid rgba(230,57,70,.35);background:linear-gradient(170deg,rgba(230,57,70,.07),rgba(6,6,13,.5) 70%)}
+.sc-card.F{border:1px solid rgba(29,124,255,.35);background:linear-gradient(170deg,rgba(29,124,255,.07),rgba(6,6,13,.5) 70%)}
+.sc-head{padding:14px 18px;border-bottom:1px solid var(--border)}
+.sc-card.L .sc-head{border-bottom-color:rgba(230,57,70,.2)}
+.sc-card.F .sc-head{border-bottom-color:rgba(29,124,255,.2)}
+.sc-name{font-family:var(--head);font-size:1.25rem;letter-spacing:.06em}
+.sc-card.L .sc-name{color:var(--esq2)}
+.sc-card.F .sc-name{color:var(--dir2)}
+.sc-tag{font-family:var(--mono);font-size:.6rem;color:var(--sub);letter-spacing:.05em;margin-top:3px}
+.sc-meters{padding:12px 18px;background:rgba(0,0,0,.25);border-bottom:1px solid var(--border)}
+.sc-m-title{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:var(--sub);margin-bottom:8px;text-transform:uppercase}
+.sc-bar-row{display:flex;align-items:center;gap:7px;margin-bottom:6px}
+.sc-bar-lbl{font-family:var(--mono);font-size:.58rem;color:var(--sub);width:120px;flex-shrink:0;line-height:1.3}
+@media(max-width:400px){.sc-bar-lbl{width:90px;font-size:.54rem}}
+.sc-bar-track{flex:1;height:18px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden;border:1px solid var(--border)}
+.sc-bar-fill{height:100%;border-radius:3px;display:flex;align-items:center;padding:0 6px;font-family:var(--mono);font-size:.54rem;color:rgba(255,255,255,.8);width:0;transition:width 1.4s cubic-bezier(.22,.68,0,1.2);white-space:nowrap;overflow:hidden}
+.sc-bar-fill.red{background:rgba(230,57,70,.7)}
+.sc-bar-fill.blue{background:rgba(29,124,255,.7)}
+.sc-bar-fill.amber{background:rgba(244,166,20,.7)}
+.sc-bar-fill.green2{background:rgba(34,197,94,.7)}
+.sc-num{font-family:var(--mono);font-size:.6rem;color:var(--sub);width:28px;text-align:right;flex-shrink:0}
+.sc-list{flex:1}
+.sc-item{padding:11px 18px;border-bottom:1px solid var(--border)}
+.sc-item:last-child{border-bottom:none}
+.sc-item-title{font-family:var(--mono);font-size:.65rem;font-weight:600;margin-bottom:4px}
+.sc-card.L .sc-item-title{color:var(--esq2)}
+.sc-card.F .sc-item-title{color:var(--dir2)}
+.sc-item-body{font-size:.76rem;color:var(--ink2);line-height:1.5}
+.badge2{display:inline-block;font-family:var(--mono);font-size:.54rem;padding:2px 7px;border-radius:3px;margin-top:5px;white-space:nowrap}
+.badge2.grave{background:rgba(230,57,70,.12);border:1px solid rgba(230,57,70,.35);color:var(--esq2)}
+.badge2.open{background:rgba(244,166,20,.1);border:1px solid rgba(244,166,20,.3);color:#fbbf24}
+.badge2.anulado{background:rgba(148,163,184,.07);border:1px solid rgba(148,163,184,.2);color:var(--sub)}
+.badge2.clean{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);color:#4ade80}
+.badge2.purple{background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.25);color:#c4b5fd}
+
+/* ── PIOR BOX ── */
+.pior-box{
+  margin-top:20px;padding:18px 20px;border-radius:var(--r);
+  background:rgba(230,57,70,.07);
+  border:1px solid rgba(230,57,70,.3);
+  border-left:4px solid var(--esq);
+  position:relative;overflow:hidden;
+}
+.pior-box::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,var(--esq),transparent);
+  animation:scan 3s linear infinite;
+}
+@keyframes scan{0%{transform:scaleX(0);transform-origin:left}50%{transform:scaleX(1);transform-origin:left}51%{transform:scaleX(1);transform-origin:right}100%{transform:scaleX(0);transform-origin:right}}
+.pior-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--esq2);background:rgba(230,57,70,.1);border:1px solid rgba(230,57,70,.25);border-radius:4px;padding:3px 9px;display:inline-block;margin-bottom:10px}
+.pior-title{font-family:var(--head);font-size:1.3rem;letter-spacing:.05em;color:#fff;margin-bottom:9px}
+.pior-body{font-size:.8rem;color:var(--ink2);line-height:1.7}
+.pior-body strong{color:var(--esq2)}
+.pior-note{margin-top:12px;padding:9px 12px;background:rgba(255,255,255,.04);border-radius:7px;font-family:var(--mono);font-size:.68rem;color:var(--sub);line-height:1.65;border-left:2px solid var(--border2)}
+.pior-note strong{color:var(--ink2)}
+
+/* ── TRUMP CARD ── */
+.trump-card{padding:18px 20px;border-radius:var(--r);background:rgba(244,166,20,.05);border:1px solid rgba(244,166,20,.28);border-left:4px solid var(--gold)}
+.trump-flag{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--gold);background:rgba(244,166,20,.1);border:1px solid rgba(244,166,20,.25);border-radius:4px;padding:3px 9px;display:inline-block;margin-bottom:10px}
+.trump-title{font-family:var(--head);font-size:1.2rem;letter-spacing:.05em;color:#fff;margin-bottom:10px}
+.trump-body{font-size:.8rem;color:var(--ink2);line-height:1.7;margin-bottom:12px}
+.trump-body strong{color:var(--gold)}
+.trump-items{display:flex;flex-direction:column;gap:9px}
+.trump-item{padding:11px 14px;background:rgba(244,166,20,.06);border:1px solid rgba(244,166,20,.14);border-radius:8px}
+.trump-item-title{font-family:var(--mono);font-size:.65rem;color:var(--gold);margin-bottom:4px}
+.trump-item-body{font-size:.76rem;color:var(--ink2);line-height:1.5}
+.trump-badge{display:inline-block;font-family:var(--mono);font-size:.54rem;padding:2px 8px;border-radius:3px;margin-top:5px;background:rgba(244,166,20,.12);border:1px solid rgba(244,166,20,.3);color:var(--gold)}
+.trump-note{margin-top:12px;padding:9px 12px;background:rgba(255,255,255,.04);border-radius:7px;font-family:var(--mono);font-size:.68rem;color:var(--sub);line-height:1.65;border-left:2px solid var(--border2)}
+.trump-note strong{color:var(--ink2)}
+
+/* ── VOTO REC ── */
+.voto-rec{padding:24px 22px;border-radius:var(--r);background:linear-gradient(135deg,rgba(230,57,70,.1),rgba(230,57,70,.04));border:1px solid rgba(230,57,70,.4);border-top:4px solid var(--esq);text-align:center;position:relative;overflow:hidden}
+.voto-rec::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(230,57,70,.08),transparent 70%)}
+.vr-tag{font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;color:var(--esq2);background:rgba(230,57,70,.1);border:1px solid rgba(230,57,70,.25);border-radius:4px;padding:3px 11px;display:inline-block;margin-bottom:14px}
+.vr-number{font-family:var(--head);font-size:clamp(3.5rem,11vw,7rem);letter-spacing:.04em;color:var(--esq);line-height:1}
+.vr-subtitle{font-family:var(--head);font-size:1.4rem;letter-spacing:.08em;color:#fff;margin-top:4px;margin-bottom:16px}
+.vr-body{font-size:.84rem;color:var(--ink2);line-height:1.75;max-width:580px;margin:0 auto}
+.vr-body strong{color:#fff}
+.vr-reasons{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px;text-align:left}
+@media(max-width:560px){.vr-reasons{grid-template-columns:1fr}}
+.vr-reason{padding:10px 12px;background:rgba(230,57,70,.07);border:1px solid rgba(230,57,70,.18);border-radius:8px;font-size:.75rem;color:var(--ink2);line-height:1.5;display:flex;align-items:flex-start;gap:9px}
+.vr-dot{width:6px;height:6px;background:var(--esq);border-radius:50%;flex-shrink:0;margin-top:5px}
+.vr-caveat{margin-top:16px;padding:11px 14px;background:rgba(255,255,255,.04);border-radius:8px;font-family:var(--mono);font-size:.69rem;color:var(--sub);line-height:1.65;border:1px solid var(--border);text-align:left}
+.vr-caveat strong{color:var(--ink2)}
+.voto-dois{padding:18px 20px;border-radius:var(--r);background:rgba(29,124,255,.05);border:1px solid rgba(29,124,255,.25)}
+.vd-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--dir2);background:rgba(29,124,255,.1);border:1px solid rgba(29,124,255,.25);border-radius:4px;padding:3px 9px;display:inline-block;margin-bottom:9px}
+.vd-title{font-family:var(--head);font-size:1.05rem;letter-spacing:.06em;color:var(--dir2);margin-bottom:9px}
+.vd-body{font-size:.79rem;color:var(--ink2);line-height:1.7}
+.vd-body strong{color:var(--dir2)}
+.vd-reasons{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.vd-reason{font-size:.76rem;color:var(--ink2);display:flex;align-items:flex-start;gap:9px}
+.vd-dot{width:5px;height:5px;background:var(--dir);border-radius:50%;flex-shrink:0;margin-top:7px}
+.vd-caveat{margin-top:10px;padding:9px 12px;background:rgba(255,255,255,.04);border-radius:7px;font-family:var(--mono);font-size:.67rem;color:var(--sub);line-height:1.6;border-left:2px solid var(--border2)}
+
+/* ── PLACAR ── */
+.placar-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
+@media(max-width:540px){.placar-grid{grid-template-columns:1fr}}
+.pl-card{background:var(--card);border-radius:var(--r);padding:18px;text-align:center;border:1px solid var(--border)}
+.pl-card.L{border-bottom:2px solid var(--esq)}
+.pl-card.F{border-bottom:2px solid var(--dir)}
+.pl-label{font-family:var(--mono);font-size:.63rem;letter-spacing:.08em;color:var(--sub);margin-bottom:10px;text-transform:uppercase}
+.pl-num{font-family:var(--head);font-size:2.8rem;font-weight:400;line-height:1}
+.pl-card.L .pl-num{color:var(--esq2)}
+.pl-card.F .pl-num{color:var(--dir2)}
+.pl-desc{font-family:var(--mono);font-size:.62rem;color:var(--sub);margin-top:7px;line-height:1.55}
+
+/* ── BARRAS ── */
+.bar-group{margin-top:12px}
+.bar-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.bar-lbl{width:160px;font-family:var(--mono);font-size:.66rem;color:var(--sub);flex-shrink:0;line-height:1.3}
+@media(max-width:480px){.bar-lbl{width:110px;font-size:.6rem}}
+.bar-track{flex:1;height:24px;background:rgba(255,255,255,.04);border-radius:5px;overflow:hidden;border:1px solid var(--border)}
+.bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding:0 8px;font-family:var(--mono);font-size:.62rem;color:rgba(255,255,255,.8);width:0;transition:width 1.4s cubic-bezier(.22,.68,0,1.2);white-space:nowrap;overflow:hidden}
+.bar-fill.red{background:rgba(230,57,70,.75)}
+.bar-fill.blue{background:rgba(29,124,255,.75)}
+.bar-fill.gold{background:rgba(244,166,20,.75)}
+.bar-fill.green{background:rgba(34,197,94,.75)}
+.bar-fill.purple{background:rgba(139,92,246,.75)}
+.bar-fill.orange{background:rgba(249,115,22,.75)}
+.bar-num{width:34px;font-family:var(--mono);font-size:.65rem;color:var(--sub);text-align:right;flex-shrink:0}
+.bar-cat{font-family:var(--mono);font-size:.6rem;color:var(--gold);letter-spacing:.08em;margin:12px 0 7px;text-transform:uppercase}
+
+/* ── CHART BOX ── */
+.chart-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;overflow:hidden}
+
+/* ── PERFIS ── */
+.profiles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:540px){.profiles{grid-template-columns:1fr}}
+.pcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;position:relative;overflow:hidden}
+.pcard.L{border-top:2px solid var(--esq)}
+.pcard.F{border-top:2px solid var(--dir)}
+.pcard.N{border-top:2px solid var(--gold)}
+.ptag{display:inline-block;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-bottom:8px}
+.ptag.L{background:var(--esq-dim);border:1px solid rgba(230,57,70,.3);color:var(--esq2)}
+.ptag.F{background:var(--dir-dim);border:1px solid rgba(29,124,255,.3);color:var(--dir2)}
+.ptag.N{background:var(--gold-dim);border:1px solid rgba(244,166,20,.3);color:var(--gold)}
+.pname{font-family:var(--head);font-size:1.05rem;letter-spacing:.04em;margin-bottom:7px}
+.pname.L{color:var(--esq2)}.pname.F{color:var(--dir2)}.pname.N{color:var(--gold)}
+.pbio{font-size:.78rem;color:var(--sub);line-height:1.6}
+.prop-list{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.prop-item{padding:8px 11px;background:rgba(255,255,255,.03);border-radius:6px;border:1px solid var(--border);font-size:.74rem;color:var(--ink2);line-height:1.5}
+.prop-item-title{font-family:var(--mono);font-size:.6rem;margin-bottom:3px}
+.pcard.L .prop-item-title{color:var(--esq2)}
+.pcard.F .prop-item-title{color:var(--dir2)}
+.pcard.N .prop-item-title{color:var(--gold)}
+
+/* ── PODRES ── */
+.podres-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:620px){.podres-grid{grid-template-columns:1fr}}
+.podres-col{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.podres-col-head{padding:12px 16px;font-family:var(--head);font-size:.85rem;letter-spacing:.08em;display:flex;align-items:center;gap:10px}
+.podres-col.L .podres-col-head{background:rgba(230,57,70,.08);border-bottom:1px solid rgba(230,57,70,.18);color:var(--esq2)}
+.podres-col.F .podres-col-head{background:rgba(29,124,255,.08);border-bottom:1px solid rgba(29,124,255,.18);color:var(--dir2)}
+.podres-col.G .podres-col-head{background:rgba(244,166,20,.08);border-bottom:1px solid rgba(244,166,20,.18);color:var(--gold)}
+.podre-item{border-bottom:1px solid var(--border);padding:11px 16px}
+.podre-item:last-child{border-bottom:none}
+.podre-item-title{font-family:var(--mono);font-size:.67rem;font-weight:600;margin-bottom:4px}
+.podres-col.L .podre-item-title{color:var(--esq2)}
+.podres-col.F .podre-item-title{color:var(--dir2)}
+.podres-col.G .podre-item-title{color:var(--gold)}
+.podre-item-body{font-size:.75rem;color:var(--ink2);line-height:1.5}
+.bdg{display:inline-block;font-family:var(--mono);font-size:.55rem;padding:2px 7px;border-radius:3px;white-space:nowrap;margin-top:6px}
+.bdg.grave{background:rgba(230,57,70,.1);border:1px solid rgba(230,57,70,.35);color:var(--esq2)}
+.bdg.open{background:rgba(244,166,20,.08);border:1px solid rgba(244,166,20,.3);color:#fbbf24}
+.bdg.anulado{background:rgba(148,163,184,.07);border:1px solid rgba(148,163,184,.2);color:var(--sub)}
+.bdg.clean{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);color:#4ade80}
+.bdg.preso{background:rgba(230,57,70,.18);border:1px solid rgba(230,57,70,.5);color:#fca5a5;font-weight:700}
+
+/* ── TABELA GOV ── */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.gov-table{width:100%;border-collapse:collapse;font-size:.76rem;min-width:520px}
+.gov-table th{font-family:var(--mono);font-size:.59rem;letter-spacing:.09em;text-transform:uppercase;color:var(--gold);padding:9px 11px;border-bottom:1px solid var(--border2);text-align:left;white-space:nowrap}
+.gov-table td{padding:8px 11px;border-bottom:1px solid var(--border);color:var(--ink2);vertical-align:middle}
+.gov-table tbody tr:hover td{background:rgba(255,255,255,.02)}
+.gov-table .dur{font-family:var(--mono);font-size:.65rem;color:var(--gold);white-space:nowrap}
+.ideo{display:inline-block;font-family:var(--mono);font-size:.57rem;font-weight:600;padding:2px 6px;border-radius:3px}
+.ideo.E{background:var(--esq-dim);color:var(--esq2);border:1px solid rgba(230,57,70,.2)}
+.ideo.D{background:var(--dir-dim);color:var(--dir2);border:1px solid rgba(29,124,255,.2)}
+.ideo.C{background:rgba(139,92,246,.1);color:#a78bfa;border:1px solid rgba(139,92,246,.2)}
+.ideo.M{background:rgba(148,163,184,.07);color:var(--sub);border:1px solid rgba(148,163,184,.15)}
+.flag2{font-family:var(--mono);font-size:.58rem;color:var(--esq2);margin-left:3px}
+.record-row td{background:rgba(244,166,20,.06)!important}
+.record-badge{display:inline-block;font-family:var(--mono);font-size:.53rem;padding:1px 5px;border-radius:3px;background:rgba(244,166,20,.15);border:1px solid rgba(244,166,20,.4);color:var(--gold);margin-left:5px}
+
+/* ── TEMPO NO PODER ── */
+.poder-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px}
+@media(max-width:600px){.poder-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:360px){.poder-grid{grid-template-columns:1fr}}
+.poder-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px;text-align:center}
+.poder-card.top{border:1px solid rgba(244,166,20,.4);background:rgba(244,166,20,.05)}
+.poder-num{font-family:var(--head);font-size:2.4rem;line-height:1}
+.poder-card.top .poder-num{color:var(--gold)}
+.poder-card:not(.top) .poder-num{color:var(--ink2)}
+.poder-lbl{font-family:var(--mono);font-size:.6rem;color:var(--sub);margin-top:5px;line-height:1.4}
+.poder-name{font-family:var(--mono);font-size:.66rem;color:var(--ink2);margin-top:3px}
+
+/* ── VOCARO SECTION ── */
+.vocaro-card{padding:18px 20px;border-radius:var(--r);background:rgba(249,115,22,.05);border:1px solid rgba(249,115,22,.28);border-left:4px solid #f97316}
+.vocaro-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:#fb923c;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.25);border-radius:4px;padding:3px 9px;display:inline-block;margin-bottom:10px}
+.vocaro-title{font-family:var(--head);font-size:1.2rem;letter-spacing:.05em;color:#fff;margin-bottom:10px}
+.vocaro-body{font-size:.8rem;color:var(--ink2);line-height:1.7;margin-bottom:12px}
+.vocaro-body strong{color:#fb923c}
+.vocaro-items{display:flex;flex-direction:column;gap:9px}
+.vocaro-item{padding:11px 14px;background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.14);border-radius:8px}
+.vocaro-item-title{font-family:var(--mono);font-size:.65rem;color:#fb923c;margin-bottom:4px}
+.vocaro-item-body{font-size:.76rem;color:var(--ink2);line-height:1.5}
+.vocaro-badge{display:inline-block;font-family:var(--mono);font-size:.54rem;padding:2px 8px;border-radius:3px;margin-top:5px;background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.3);color:#fb923c}
+
+/* ── LINHA DO TEMPO ── */
+.timeline{position:relative;padding-left:22px}
+.timeline::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--esq),var(--dir))}
+.tl-item{position:relative;margin-bottom:18px}
+.tl-dot{position:absolute;left:-18px;top:4px;width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.tl-dot.r{background:var(--esq);box-shadow:0 0 6px rgba(230,57,70,.5)}
+.tl-dot.b{background:var(--dir);box-shadow:0 0 6px rgba(29,124,255,.5)}
+.tl-dot.g{background:var(--gold);box-shadow:0 0 6px rgba(244,166,20,.5)}
+.tl-dot.gr{background:var(--green);box-shadow:0 0 6px rgba(34,197,94,.5)}
+.tl-year{font-family:var(--mono);font-size:.62rem;color:var(--gold);margin-bottom:3px}
+.tl-title{font-family:var(--mono);font-size:.7rem;font-weight:600;color:var(--ink);margin-bottom:3px}
+.tl-body{font-size:.76rem;color:var(--ink2);line-height:1.5}
+
+/* ── INFO BOX ── */
+.info-box{padding:14px 16px;background:rgba(255,255,255,.03);border-radius:8px;border:1px solid var(--border);margin-bottom:12px}
+.info-box-title{font-family:var(--mono);font-size:.65rem;font-weight:600;color:var(--gold);margin-bottom:6px;letter-spacing:.06em}
+.info-box-body{font-size:.78rem;color:var(--ink2);line-height:1.6}
+.info-box-body strong{color:var(--ink)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.two-col{grid-template-columns:1fr}}
+
+footer{margin-top:60px;border-top:1px solid var(--border);padding-top:18px;font-family:var(--mono);font-size:.64rem;color:var(--sub);line-height:1.9}
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:#3b2f6e;border-radius:3px}
+
+/* ── MOBILE ── */
+@media(max-width:480px){
+  .wrap{padding:0 12px 80px}
+  .hero{padding:36px 0 28px}
+  .sec{margin-top:36px}
+  .sc-meters{padding:10px 14px}
+  .sc-list .sc-item{padding:9px 14px}
+  .trump-card,.pior-box,.vocaro-card{padding:14px 14px}
+  .voto-rec{padding:18px 14px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV TABS -->
+<div class="nav-tabs" role="tablist">
+  <button class="nav-tab active" onclick="showTab('tab-escandalo',this)">⚡ Escândalos</button>
+  <button class="nav-tab" onclick="showTab('tab-propostas',this)">📋 Propostas</button>
+  <button class="nav-tab" onclick="showTab('tab-vocaro',this)">🔥 Vocaro</button>
+  <button class="nav-tab" onclick="showTab('tab-presidentes',this)">🇧🇷 Presidentes</button>
+  <button class="nav-tab" onclick="showTab('tab-governadores',this)">🏛 Governadores RJ</button>
+  <button class="nav-tab" onclick="showTab('tab-tempo',this)">⏱ Tempo no Poder</button>
+  <button class="nav-tab" onclick="showTab('tab-voto',this)">🗳 Voto</button>
+</div>
+
+<div class="wrap">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-stamp">Painel Factual · Brasil · Eleições 2026</div>
+  <h1 class="hero-title">BRASIL —<br>ENTRE O <span class="t13">13</span> E <span class="t22">22</span></h1>
+  <p class="hero-sub">// análise independente — dados verificados — outubro 2026 //</p>
+  <div class="hero-bar"></div>
+</div>
+
+<div class="disclaimer">
+  <strong>⚡ AVISO:</strong> Esta página apresenta fatos documentados de fontes públicas. <strong>Acusação ≠ condenação.</strong> Esta análise contém uma posição editorial baseada nos fatos levantados — mas <strong>o voto é uma decisão pessoal e intransferível.</strong>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- TAB 1 — ESCÂNDALOS -->
+<!-- ══════════════════════════════════════════ -->
+<div id="tab-escandalo" class="tab-panel active">
+
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Escândalos — Resumo Visual</span><div class="sec-line"></div></div>
+  <p style="font-family:var(--mono);font-size:.7rem;color:var(--sub);margin-bottom:16px">Gravidade e volume por candidato. Fontes: STF, STJ, MP-RJ, jornalismo independente.</p>
+
+  <div class="scandal-grid" id="scBars">
+    <!-- LULA -->
+    <div class="sc-card L">
+      <div class="sc-head">
+        <div class="sc-name">Lula</div>
+        <div class="sc-tag">PT · Presidente em exercício · 80 anos · #13</div>
+      </div>
+      <div class="sc-meters">
+        <div class="sc-m-title">Gravidade por categoria (0–10)</div>
+        <div class="sc-bar-row"><div class="sc-bar-lbl">Corrupção direta</div><div class="sc-bar-track"><div class="sc-bar-fill red" data-w="90">Mensalão + Lava Jato</div></div><div class="sc-num">9/10</div></div>
+        <div class="sc-bar-row"><div class="sc-bar-lbl">Polêmicas éticas</div><div class="sc-bar-track"><div class="sc-bar-fill red" data-w="70">Ditaduras / Maduro</div></div><div class="sc-num">7/10</div></div>
+        <div class="sc-bar-row"><div class="sc-bar-lbl">Inv. ativas 2026</div><div class="sc-bar-track"><div class="sc-bar-fill green2" data-w="15">Sem direta ativa</div></div><div class="sc-num">1/10</div></div>
+        <div class="sc-bar-row"><div class="sc-bar-lbl">Risco soberania</div><div class="sc-bar-track"><div class="sc-bar-fill green2" data-w="10">Defende autonomia</div></div><div class="sc-num">1/10</div></div>
+      </div>
+      <div class="sc-list">
+        <div class="sc-item"><div class="sc-item-title">▸ MENSALÃO (2005)</div><div class="sc-item-body">25 condenados pelo STF incluindo ministros. Lula não indiciado diretamente, mas o esquema operou sob seu mandato e beneficiou aliados.</div><span class="badge2 anulado">Lula não indiciado · ministros condenados</span></div>
+        <div class="sc-item"><div class="sc-item-title">▸ LAVA JATO / PETROLÃO (2014–2018)</div><div class="sc-item-body">Preso 580 dias. Condenado 2× por Sérgio Moro. Anulado em 2021 pelo STF por parcialidade do juiz — não por inocência declarada.</div><span class="badge2 anulado">Anulado — parcialidade do juiz</span></div>
+        <div class="sc-item"><div class="sc-item-title">▸ APOIO A MADURO E CUBA</div><div class="sc-item-body">Declarou Venezuela "democrática". Recebeu Maduro com honras no Planalto em 2023. Apoiou Chávez publicamente durante seus mandatos.</div><span class="badge2 grave">Crítica internacional · posição mantida</span></div>
+        <div class="sc-item"><div class="sc-item-title">▸ GASTOS LULA 3 (2023–2026)</div><div class="sc-item-body">Expansão fiscal relevante. Dívida pública acima de R$8 tri. Críticas do mercado financeiro, sem investigação criminal formal contra Lula.</div><span class="badge2 clean">Sem investigação ativa</span></div>
+        <div class="sc-item"><div class="sc-item-title">▸ TENTATIVA DE GOLPE — ALIADOS</div><div class="sc-item-body">Ministros e aliados de governos Lula envolvidos em tentativa de golpe de 8/jan/2023. Lula foi alvo, não autor.</div><span class="badge2 clean">Lula: vítima · outros condenados</span></div>
+      </div>
+    </div>
+
+    <!-- FLÁVIO -->
+    <div class="sc-card F">
+      <div class="sc-head">
+        <div class="sc-name">Flávio</div>
+        <div class="sc-tag">PL · Senador pelo RJ · 44 anos · #22</div>
+      </div>
+      <div class="sc-meters">
+        <div class="sc-m-title">Gravidade por categoria (0–10)</div>
+        <div class="sc-bar-row"><div class="sc-bar-lbl">Corrupção direta</div><div class="sc-bar-track"><div class="sc-bar-fill blue" data-w="60">Rachadinha (prescrita)</div></div><div class="sc-num">6/10</div></div>
+        <div class="sc-bar-row"><div class="sc-bar-lbl">Polêmicas éticas</div><div class="sc-bar-track"><div class="sc-bar-fill blue" data-w="80">Ana Clara + Juíza</div></div><div class="sc-num">8/10</div></div>
+        <div class="sc-bar-row"><div class="sc-bar-lbl">Inv. ativas 2026</div><div class="sc-bar-track"><div class="sc-bar-fill blue" data-w="55">Dark Horse PF/STF</div></div><div class="sc-num">5/10</div></div>
+        <div class="sc-bar-row"><div class="sc-bar-lbl">Risco soberania</div><div class="sc-bar-track"><div class="sc-bar-fill amber" data-w="85">Minerais → Trump</div></div><div class="sc-num">8/10</div></div>
+      </div>
+      <div class="sc-list">
+        <div class="sc-item"><div class="sc-item-title">▸ RACHADINHA NA ALERJ</div><div class="sc-item-body">Funcionários devolviam salários via Fabrício Queiroz. MP-RJ denunciou por peculato e lavagem. Prescrito sem julgamento de mérito em 2026.</div><span class="badge2 anulado">Prescrito — sem julgamento de mérito</span></div>
+        <div class="sc-item"><div class="sc-item-title">▸ CASO ANA CLARA ⚠</div><div class="sc-item-body">Assinou recurso para impedir júri popular do PM que matou Ana Clara Gomes, 5 anos, com 4 tiros de fuzil em Niterói (2021). Recurso negado pelo STJ.</div><span class="badge2 grave">Fato confirmado · debate ético grave</span></div>
+        <div class="sc-item"><div class="sc-item-title">▸ JUÍZA PATRÍCIA ACIOLI</div><div class="sc-item-body">Após assassinato da juíza por milicianos em 2011, postou que "a forma como ela humilhava policiais contribuiu para ter muitos inimigos." Amplamente documentado.</div><span class="badge2 grave">Declaração documentada</span></div>
+        <div class="sc-item"><div class="sc-item-title">▸ DARK HORSE — PF/STF (2026)</div><div class="sc-item-body">Investigação ativa de lavagem de dinheiro ligada ao filme sobre Jair Bolsonaro. Chegou ao 2º turno com investigação da PF em andamento.</div><span class="badge2 open">Investigação ativa — sem denúncia formal</span></div>
+        <div class="sc-item"><div class="sc-item-title">▸ PAI PRESO — JAIR BOLSONARO (2025)</div><div class="sc-item-body">Jair Bolsonaro, figura tutelar e indicador de Flávio, preso em 2025 pelo STF. Condenado pelo TSE e inelegível. Flávio é "Bolsonaro 2.0".</div><span class="badge2 grave">Candidato indicado por preso político</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pior-box">
+    <div class="pior-tag">⚠ ANÁLISE EDITORIAL — BASEADA EM FATOS DOCUMENTADOS</div>
+    <div class="pior-title">Por que Flávio apresenta mais riscos em 2026?</div>
+    <div class="pior-body">Comparando os dois em outubro de 2026: <strong>Lula não tem investigação criminal ativa.</strong> Flávio chega ao 2º turno com investigação da PF em andamento (Dark Horse), histórico de posições éticas graves documentadas, declarações comprometendo minerais críticos em troca de apoio político americano, e o pai preso como fiador de sua candidatura.</div>
+    <div class="pior-note"><strong>Importante:</strong> Lula tem histórico de corrupção indireta grave. As condenações foram anuladas por vício processual. A análise foca no risco <em>presente e futuro</em>, não apenas no passado.</div>
+  </div>
+</div>
+
+<!-- TRUMP / SOBERANIA -->
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Flávio & Trump — Soberania em Risco</span><div class="sec-line"></div></div>
+  <div class="trump-card">
+    <div class="trump-flag">🔍 Documentado — Correio Braziliense · Sul21 · OHoje · SBT News · DGABC</div>
+    <div class="trump-title">O Brasil tem a 2ª maior reserva de terras raras do mundo</div>
+    <div class="trump-body">Durante a campanha 2026, Flávio fez movimentos que críticos chamam de comprometimento da soberania nacional. <strong>Os fatos abaixo são declarações públicas documentadas.</strong></div>
+    <div class="trump-items">
+      <div class="trump-item"><div class="trump-item-title">📍 CPAC Texas — Abril 2026</div><div class="trump-item-body">Flávio declarou: "O Brasil é a solução dos EUA para romper a dependência da China em relação a minerais críticos, especialmente terras-raras." Chamou-se de "Bolsonaro 2.0".</div><span class="trump-badge">Fonte: OHoje.com · Correio Braziliense 30/03/2026</span></div>
+      <div class="trump-item"><div class="trump-item-title">📍 Pedido de interferência eleitoral</div><div class="trump-item-body">Flávio pediu ao governo Trump que "acompanhe as eleições de outubro" e tentou convencer setores americanos a aplicar tarifas ao Brasil antes das eleições para enfraquecer o governo Lula.</div><span class="trump-badge">Fonte: Correio Braziliense · Sul21 jul/2026</span></div>
+      <div class="trump-item"><div class="trump-item-title">📍 Carta de Marco Rubio</div><div class="trump-item-body">O secretário de Estado Marco Rubio agradeceu formalmente a Flávio por "se colocar à disposição em um governo de transição" — segundo Guilherme Boulos em entrevista ao SBT News (out/2026). Flávio não desmentiu.</div><span class="trump-badge">Alegado por Boulos · Não desmentido · SBT News 20/out/2026</span></div>
+      <div class="trump-item"><div class="trump-item-title">📍 3 viagens aos EUA em 2026</div><div class="trump-item-body">Ao menos 3 viagens aos EUA em 2026 buscando apoio político americano. Segundo o OHoje, ainda não conseguiu encontro formal com o próprio Trump.</div><span class="trump-badge">Fonte: OHoje.com · Outras Palavras</span></div>
+    </div>
+    <div class="trump-note"><strong>Contexto:</strong> A acusação de "entregar terras raras" é amplamente divulgada pelo campo governista. Flávio alega buscar parcerias comerciais legítimas. O fato objetivo: fez declarações públicas oferecendo minerais críticos como argumento de aliança. Cada eleitor decide o que isso representa.</div>
+  </div>
+</div>
+
+<!-- PLACAR -->
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Placar de escândalos</span><div class="sec-line"></div></div>
+  <div class="placar-grid">
+    <div class="pl-card L"><div class="pl-label">Lula — Total documentado</div><div class="pl-num">6</div><div class="pl-desc">Escândalos/polêmicas documentadas<br>0 condenações válidas em vigor<br>0 investigações ativas em 2026</div></div>
+    <div class="pl-card F"><div class="pl-label">Flávio — Total documentado</div><div class="pl-num">6</div><div class="pl-desc">Escândalos/polêmicas documentadas<br>0 condenações formais em vigor<br>1 investigação ativa (Dark Horse)</div></div>
+  </div>
+  <div class="chart-box" style="margin-top:16px">
+    <div style="font-family:var(--mono);font-size:.66rem;color:var(--sub);margin-bottom:12px;letter-spacing:.05em">▸ PODRES POR CATEGORIA — gravidade editorial (0–10)</div>
+    <div class="bar-group" id="barsMain">
+      <div class="bar-cat">Corrupção direta</div>
+      <div class="bar-row"><div class="bar-lbl">Lula</div><div class="bar-track"><div class="bar-fill red" data-w="90">Mensalão + Petrolão</div></div><div class="bar-num">9/10</div></div>
+      <div class="bar-row"><div class="bar-lbl">Flávio</div><div class="bar-track"><div class="bar-fill blue" data-w="60">Rachadinha (prescrita)</div></div><div class="bar-num">6/10</div></div>
+      <div class="bar-cat">Polêmicas éticas</div>
+      <div class="bar-row"><div class="bar-lbl">Lula</div><div class="bar-track"><div class="bar-fill red" data-w="70">Apoio a Maduro/Cuba</div></div><div class="bar-num">7/10</div></div>
+      <div class="bar-row"><div class="bar-lbl">Flávio</div><div class="bar-track"><div class="bar-fill blue" data-w="80">Ana Clara + Juíza Acioli</div></div><div class="bar-num">8/10</div></div>
+      <div class="bar-cat">Investigações ativas (2026)</div>
+      <div class="bar-row"><div class="bar-lbl">Lula</div><div class="bar-track"><div class="bar-fill green" data-w="10">Nenhuma direta</div></div><div class="bar-num">1/10</div></div>
+      <div class="bar-row"><div class="bar-lbl">Flávio</div><div class="bar-track"><div class="bar-fill blue" data-w="55">Dark Horse — PF/STF</div></div><div class="bar-num">5/10</div></div>
+      <div class="bar-cat">Risco de soberania nacional</div>
+      <div class="bar-row"><div class="bar-lbl">Lula</div><div class="bar-track"><div class="bar-fill green" data-w="10">Defende autonomia</div></div><div class="bar-num">1/10</div></div>
+      <div class="bar-row"><div class="bar-lbl">Flávio</div><div class="bar-track"><div class="bar-fill gold" data-w="85">Minerais críticos/Trump</div></div><div class="bar-num">8/10</div></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end tab-escandalo -->
+
+<!-- ══════════════════════════════════════════ -->
+<!-- TAB 2 — PROPOSTAS -->
+<!-- ══════════════════════════════════════════ -->
+<div id="tab-propostas" class="tab-panel">
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Perfis dos candidatos</span><div class="sec-line"></div></div>
+  <div class="profiles">
+    <div class="pcard L">
+      <span class="ptag L">PT · Esquerda · #13</span>
+      <div class="pname L">Luiz Inácio Lula da Silva</div>
+      <p class="pbio">80 anos. Presidente em exercício (4º mandato). Ex-metalúrgico e sindicalista. Fundador do PT em 1980. Governou 2003–2011 e 2023–presente. Preso 580 dias em 2018. Anulado pelo STF em 2021.</p>
+    </div>
+    <div class="pcard F">
+      <span class="ptag F">PL · Direita · #22</span>
+      <div class="pname F">Flávio Nantes Bolsonaro</div>
+      <p class="pbio">44 anos. Senador pelo RJ. Advogado e empresário. Indicado por Jair Bolsonaro (inelegível, preso 2025). Ex-deputado estadual na Alerj por 12 anos. Nunca governou em nível executivo.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Propostas — Comparativo por área</span><div class="sec-line"></div></div>
+
+  <div class="two-col">
+    <!-- LULA PROPOSTAS -->
+    <div class="pcard L">
+      <span class="ptag L">Lula — PT #13</span>
+      <div class="pname L">Agenda 2027–2031</div>
+      <div class="prop-list">
+        <div class="prop-item"><div class="prop-item-title" style="color:var(--esq2)">💰 ECONOMIA</div>Continuidade do PAC, transição energética verde, Minha Casa Minha Vida acelerado. Foco em redução da desigualdade. Crítica: expansão fiscal sem controle do déficit.</div>
+        <div class="prop-item"><div class="prop-item-title" style="color:var(--esq2)">🌳 MEIO AMBIENTE</div>Meta zero desmatamento. Fundo Amazônia reativado. Acordo de Paris cumprido. COP30 no Brasil em 2025.</div>
+        <div class="prop-item"><div class="prop-item-title" style="color:var(--esq2)">🏥 SAÚDE E EDUCAÇÃO</div>Defesa do SUS universal. Expansão do PROUNI e FIES. Mais Médicos ampliado. Creche gratuita para crianças 0–3 anos.</div>
+        <div class="prop-item"><div class="prop-item-title" style="color:var(--esq2)">🌍 POLÍTICA EXTERNA</div>Retorno ao multilateralismo. Liderança do Sul Global. Postura autônoma em relação a EUA e China. BRICS fortalecido.</div>
+        <div class="prop-item"><div class="prop-item-title" style="color:var(--esq2)">🔒 SEGURANÇA</div>Política de segurança cidadã. Crítica à militarização policial. Debate sobre política de drogas. Fundo Nacional de Segurança Pública.</div>
+      </div>
+    </div>
+
+    <!-- FLÁVIO PROPOSTAS -->
+    <div class="pcard F">
+      <span class="ptag F">Flávio — PL #22</span>
+      <div class="pname F">Agenda 2027–2031</div>
+      <div class="prop-list">
+        <div class="prop-item"><div class="prop-item-title" style="color:var(--dir2)">💰 ECONOMIA</div>Privatizações ampliadas, menos intervenção estatal, corte de gastos, reforma tributária liberal. Foco no mercado financeiro e pequenas empresas.</div>
+        <div class="prop-item"><div class="prop-item-title" style="color:var(--dir2)">🌳 MEIO AMBIENTE</div>Flexibilização do licenciamento ambiental. Revisão de acordos climáticos. Prioridade ao agronegócio. Crítica a "ambientalismo radical".</div>
+        <div class="prop-item"><div class="prop-item-title" style="color:var(--dir2)">🏥 SAÚDE E EDUCAÇÃO</div>Voucher educacional para escolas privadas. Homeschooling regulamentado. SUS mantido com maior participação privada. Crítica ao "doutrinamento" nas universidades.</div>
+        <div class="prop-item"><div class="prop-item-title" style="color:var(--dir2)">🌍 POLÍTICA EXTERNA</div>Alinhamento com EUA (Trump) e Israel. Revisão de acordos com China. Saída de fóruns multilaterais "ideológicos". Parceria em minerais críticos.</div>
+        <div class="prop-item"><div class="prop-item-title" style="color:var(--dir2)">🔒 SEGURANÇA</div>Excludente de ilicitude para policiais. Armamento da população (revisão estatuto do desarmamento). Penas mais duras. Militarização da segurança pública.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Comparativo direto — Temas-chave</span><div class="sec-line"></div></div>
+  <div style="overflow-x:auto">
+  <table class="gov-table" style="min-width:480px">
+    <thead><tr><th>Tema</th><th style="color:var(--esq2)">Lula 13</th><th style="color:var(--dir2)">Flávio 22</th></tr></thead>
+    <tbody>
+      <tr><td>Bolsa Família</td><td style="color:#4ade80;font-size:.73rem">Mantém e expande</td><td style="color:var(--esq2);font-size:.73rem">Revisão de critérios</td></tr>
+      <tr><td>Porte de armas</td><td style="color:var(--esq2);font-size:.73rem">Restringe</td><td style="color:#4ade80;font-size:.73rem">Libera</td></tr>
+      <tr><td>Amazônia / desmatamento</td><td style="color:#4ade80;font-size:.73rem">Combate ativo</td><td style="color:var(--esq2);font-size:.73rem">Prioriza produção</td></tr>
+      <tr><td>Privatizações</td><td style="color:var(--esq2);font-size:.73rem">Contra (Petrobras, etc.)</td><td style="color:#4ade80;font-size:.73rem">Privatização ampla</td></tr>
+      <tr><td>Venezuela / Cuba</td><td style="color:var(--esq2);font-size:.73rem">Aliança histórica</td><td style="color:#4ade80;font-size:.73rem">Ruptura total</td></tr>
+      <tr><td>Imposto para ricos</td><td style="color:#4ade80;font-size:.73rem">Aprovado (500k+)</td><td style="color:var(--esq2);font-size:.73rem">Contrário</td></tr>
+      <tr><td>Relação com EUA</td><td style="color:var(--sub);font-size:.73rem">Autônoma · multilateral</td><td style="color:var(--esq2);font-size:.73rem">Alinhado a Trump</td></tr>
+      <tr><td>Reforma Agrária</td><td style="color:#4ade80;font-size:.73rem">Assentamentos</td><td style="color:var(--esq2);font-size:.73rem">Contra MST</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+</div><!-- end tab-propostas -->
+
+<!-- ══════════════════════════════════════════ -->
+<!-- TAB 3 — VOCARO -->
+<!-- ══════════════════════════════════════════ -->
+<div id="tab-vocaro" class="tab-panel">
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Rodrigo Pacheco & Vocaro — Escândalos Recentes</span><div class="sec-line"></div></div>
+
+  <div class="vocaro-card">
+    <div class="vocaro-tag">🔥 ESCÂNDALOS RECENTES · 2024–2026</div>
+    <div class="vocaro-title">O "Vocaro" — e o Congresso em Chamas</div>
+    <div class="vocaro-body">O Congresso Nacional 2023–2026 ficou marcado por uma série de escândalos que envolvem <strong>Arthur Lira (PP-AL), Rodrigo Pacheco (PSD-MG), e o "Centrão"</strong> — o bloco de poder que controla verbas, cargos e pautas. Confira os principais.</div>
+    <div class="vocaro-items">
+      <div class="vocaro-item">
+        <div class="vocaro-item-title">💸 FUNDO ELEITORAL BILIONÁRIO (2022–2024)</div>
+        <div class="vocaro-item-body">O fundo eleitoral aprovado pelo Congresso chegou a R$4,96 bilhões em 2022 — maior da história. Distribuição favoreceu partidos do Centrão. Arthur Lira centralizou repasses. Mecanismo chamado por especialistas de "caixa dois institucionalizado".</div>
+        <span class="vocaro-badge">Fonte: Câmara dos Deputados · TSE · Agência Pública</span>
+      </div>
+      <div class="vocaro-item">
+        <div class="vocaro-item-title">🏛 EMENDAS IMPOSITIVAS — "ORÇAMENTO SECRETO 2.0"</div>
+        <div class="vocaro-item-body">Após o STF acabar com o orçamento secreto de Bolsonaro, o Congresso criou as "emendas de comissão impositivas" — mecanismo similar que continuou permitindo repasses bilionários sem rastreabilidade adequada. R$17 bilhões em 2025 sem controle público.</div>
+        <span class="vocaro-badge">Fonte: Folha de S.Paulo · Senado Federal · 2025</span>
+      </div>
+      <div class="vocaro-item">
+        <div class="vocaro-item-title">🔎 ARTHUR LIRA — SAÍDA E HERANÇA</div>
+        <div class="vocaro-item-body">Arthur Lira (PP-AL) presidiu a Câmara 2021–2025. Investigado por corrupção passiva em processo anterior (2017). Saiu da presidência deixando um sistema de dependência fiscal entre deputados e a Mesa Diretora. Investigações continuam em 2026.</div>
+        <span class="vocaro-badge">Fonte: STF · O Globo · Piauí · 2024–2025</span>
+      </div>
+      <div class="vocaro-item">
+        <div class="vocaro-item-title">📋 RODRIGO PACHECO — SENADO E CONTROVÉRSIAS</div>
+        <div class="vocaro-item-body">Rodrigo Pacheco (PSD-MG), presidente do Senado e do STF até 2023, foi alvo de críticas por pautar projetos favoráveis ao setor minerário de MG. Acusações de conflito de interesse com empresas de mineração da família. Sem condenação formal.</div>
+        <span class="vocaro-badge">Fonte: Congresso em Foco · Agência Senado · 2023</span>
+      </div>
+      <div class="vocaro-item">
+        <div class="vocaro-item-title">🎬 CASO DARK HORSE — FILME BOLSONARO (2026)</div>
+        <div class="vocaro-item-body">Investigação da PF apura lavagem de dinheiro no financiamento do filme "Bolsonaro: O Homem por Trás da Máscara". Flávio Bolsonaro aparece como investigado. O inquérito incluiu busca e apreensão na residência de aliados em setembro/2026.</div>
+        <span class="vocaro-badge">Fonte: UOL · Metrópoles · PF · set/2026</span>
+      </div>
+      <div class="vocaro-item">
+        <div class="vocaro-item-title">⚡ PEC DA ANISTIA — TENTATIVA DE BLINDAR GOLPISTAS</div>
+        <div class="vocaro-item-body">Em 2024, o Congresso votou a PEC da Anistia, que anistiaria os envolvidos no 8 de janeiro e devolveria Bolsonaro a elegibilidade. Aprovada na Câmara por Lira, derrubada no Senado por pressão social. Representou tentativa institucional de impedir punições.</div>
+        <span class="vocaro-badge">Fonte: Câmara dos Deputados · STF · 2024</span>
+      </div>
+      <div class="vocaro-item">
+        <div class="vocaro-item-title">💊 PASTORES, IGREJAS E EMENDAS PARLAMENTARES</div>
+        <div class="vocaro-item-body">Investigações em 2025 revelaram esquema de desvio de emendas parlamentares para entidades ligadas a igrejas evangélicas. Parlamentares da bancada religiosa distribuíam verba para organizações fantasmas vinculadas a pastores aliados. CGU e AGU investigam.</div>
+        <span class="vocaro-badge">Fonte: Agência Pública · Piauí · CGU · 2025</span>
+      </div>
+      <div class="vocaro-item">
+        <div class="vocaro-item-title">🏥 OPERAÇÃO SAÚDE CORRUPTA — PREFEITURAS (2024–2026)</div>
+        <div class="vocaro-item-body">Operações da PF em 2024–2026 revelaram esquemas de desvio em secretarias municipais de saúde em ao menos 11 estados. Prefeitos de partidos variados — PP, MDB, PSD, União Brasil — presos ou investigados. Esquemas ligados a empresas de TI de saúde e fornecedores de medicamentos.</div>
+        <span class="vocaro-badge">Fonte: PF · TCU · 2024–2026</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Escândalos por Partido — 2019–2026</span><div class="sec-line"></div></div>
+  <div class="chart-box">
+    <div style="font-family:var(--mono);font-size:.66rem;color:var(--sub);margin-bottom:12px">▸ Volume de escândalos com repercussão nacional documentada (0–10)</div>
+    <div class="bar-group" id="barsPartido">
+      <div class="bar-row"><div class="bar-lbl">PT (Lula)</div><div class="bar-track"><div class="bar-fill red" data-w="70">Histórico gravíssimo</div></div><div class="bar-num">7/10</div></div>
+      <div class="bar-row"><div class="bar-lbl">PL (Bolsonaro)</div><div class="bar-track"><div class="bar-fill blue" data-w="85">Golpe + joias + preso</div></div><div class="bar-num">8/10</div></div>
+      <div class="bar-row"><div class="bar-lbl">PP (Lira)</div><div class="bar-track"><div class="bar-fill orange" data-w="75">Emendas + orçamento</div></div><div class="bar-num">7/10</div></div>
+      <div class="bar-row"><div class="bar-lbl">MDB (Temer)</div><div class="bar-track"><div class="bar-fill gold" data-w="80">Corrupção sistêmica</div></div><div class="bar-num">8/10</div></div>
+      <div class="bar-row"><div class="bar-lbl">PSD (Pacheco)</div><div class="bar-track"><div class="bar-fill purple" data-w="45">Conflito de interesse</div></div><div class="bar-num">4/10</div></div>
+      <div class="bar-row"><div class="bar-lbl">União Brasil</div><div class="bar-track"><div class="bar-fill orange" data-w="55">Saúde + emendas</div></div><div class="bar-num">5/10</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Linha do tempo — Escândalos recentes</span><div class="sec-line"></div></div>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot r"></div><div class="tl-year">2022</div><div class="tl-title">Orçamento Secreto — R$8,2 bilhões</div><div class="tl-body">STF declarou inconstitucional o sistema de emendas de relator que distribuía bilhões sem rastreabilidade. Beneficiou parlamentares aliados de Bolsonaro.</div></div>
+    <div class="tl-item"><div class="tl-dot r"></div><div class="tl-year">Jan/2023</div><div class="tl-title">8 de Janeiro — Ataque às instituições</div><div class="tl-body">Bolsonaristas invadiram e depredaram STF, Planalto e Congresso. Mais de 2.800 presos. Bolsonaro indiciado por tentativa de golpe.</div></div>
+    <div class="tl-item"><div class="tl-dot g"></div><div class="tl-year">2023</div><div class="tl-title">Joias da Arábia Saudita — Bolsonaro</div><div class="tl-body">PF revelou esquema de venda ilícita de joias sauditas presenteadas ao Estado. Bolsonaro indiciado. Um dos fatos que levou à prisão em 2025.</div></div>
+    <div class="tl-item"><div class="tl-dot g"></div><div class="tl-year">2024</div><div class="tl-title">PEC da Anistia — Tentativa frustrada</div><div class="tl-body">Câmara aprovou sob Lira, Senado derrubou. Tentativa de impunidade para golpistas e devolução de elegibilidade a Bolsonaro.</div></div>
+    <div class="tl-item"><div class="tl-dot b"></div><div class="tl-year">2024</div><div class="tl-title">Emendas impositivas — R$17 bilhões</div><div class="tl-body">Novo mecanismo de distribuição de emendas sem rastreabilidade substitui orçamento secreto. STF analisa constitucionalidade.</div></div>
+    <div class="tl-item"><div class="tl-dot r"></div><div class="tl-year">Mar/2025</div><div class="tl-title">Jair Bolsonaro preso pelo STF</div><div class="tl-body">Preso após investigação de tentativa de golpe, joias e obstrução da justiça. Julgamento em andamento. Flávio visita o pai na prisão regularmente.</div></div>
+    <div class="tl-item"><div class="tl-dot g"></div><div class="tl-year">2025</div><div class="tl-title">Pastores e emendas — CGU investiga</div><div class="tl-body">Desvios de emendas para igrejas e entidades religiosas fantasmas. Bancada evangélica sob escrutínio da CGU e AGU.</div></div>
+    <div class="tl-item"><div class="tl-dot b"></div><div class="tl-year">Set/2026</div><div class="tl-title">Dark Horse — Busca e apreensão</div><div class="tl-body">PF realiza operação contra lavagem em filme bolsonarista. Flávio Bolsonaro aparece como investigado. Acontece semanas antes do 2º turno.</div></div>
+  </div>
+</div>
+</div><!-- end tab-vocaro -->
+
+<!-- ══════════════════════════════════════════ -->
+<!-- TAB 4 — PRESIDENTES -->
+<!-- ══════════════════════════════════════════ -->
+<div id="tab-presidentes" class="tab-panel">
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Presidentes do Brasil — 1945–2026</span><div class="sec-line"></div></div>
+  <div class="chart-box" style="padding:0;overflow:hidden">
+    <div class="table-wrap">
+    <table class="gov-table">
+      <thead><tr><th>Presidente</th><th>Período</th><th>Anos</th><th>Espectro</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td>Eurico Gaspar Dutra</td><td>1946–1951</td><td class="dur">5 anos</td><td><span class="ideo D">Direita</span></td><td style="color:var(--sub);font-size:.71rem">PSD · 1º presidente eleito pós-Estado Novo</td></tr>
+        <tr><td>Getúlio Vargas</td><td>1951–1954</td><td class="dur">3 anos</td><td><span class="ideo E">Esquerda</span></td><td style="color:var(--sub);font-size:.71rem">PTB · suicidou-se no cargo</td></tr>
+        <tr><td>Juscelino Kubitschek</td><td>1956–1961</td><td class="dur">5 anos</td><td><span class="ideo C">Centro</span></td><td style="color:var(--sub);font-size:.71rem">PSD · Brasília + "50 anos em 5"</td></tr>
+        <tr><td>Jânio Quadros</td><td>1961</td><td class="dur">7 meses</td><td><span class="ideo D">Direita</span></td><td style="color:var(--esq2);font-size:.71rem">Renunciou · menor mandato eleito</td></tr>
+        <tr><td>João Goulart (Jango)</td><td>1961–1964</td><td class="dur">2,5 anos</td><td><span class="ideo E">Esquerda</span></td><td style="color:var(--esq2);font-size:.71rem">PTB · deposto pelo golpe militar</td></tr>
+        <tr class="record-row"><td>Castelo Branco → Figueiredo <span class="flag2">⚠</span></td><td>1964–1985</td><td class="dur">21 anos <span class="record-badge">MAIS LONGA</span></td><td><span class="ideo M">Ditadura</span></td><td style="color:var(--esq2);font-size:.71rem">5 generais · regime militar · AI-5</td></tr>
+        <tr><td>José Sarney</td><td>1985–1990</td><td class="dur">5 anos</td><td><span class="ideo D">Direita</span></td><td style="color:var(--sub);font-size:.71rem">PMDB · redemocratização</td></tr>
+        <tr><td>Fernando Collor <span class="flag2">⚠</span></td><td>1990–1992</td><td class="dur">2 anos</td><td><span class="ideo D">Direita</span></td><td style="color:var(--esq2);font-size:.71rem">Impeachment por corrupção</td></tr>
+        <tr><td>Itamar Franco</td><td>1992–1995</td><td class="dur">2,5 anos</td><td><span class="ideo C">Centro</span></td><td style="color:var(--sub);font-size:.71rem">PMDB · assumiu após Collor · Plano Real</td></tr>
+        <tr class="record-row"><td>Fernando Henrique Cardoso (FHC)</td><td>1995–2003</td><td class="dur">8 anos</td><td><span class="ideo D">Direita</span></td><td style="color:var(--sub);font-size:.71rem">PSDB · 2 mandatos · reeleição</td></tr>
+        <tr class="record-row"><td>Luiz Inácio Lula da Silva <span class="flag2">⚠</span></td><td>2003–2011</td><td class="dur">8 anos</td><td><span class="ideo E">Esquerda</span></td><td style="color:var(--sub);font-size:.71rem">PT · 2 mandatos · Mensalão/Lava Jato</td></tr>
+        <tr><td>Dilma Rousseff <span class="flag2">⚠</span></td><td>2011–2016</td><td class="dur">5 anos</td><td><span class="ideo E">Esquerda</span></td><td style="color:var(--esq2);font-size:.71rem">PT · 1ª mulher presidente · impeachment</td></tr>
+        <tr><td>Michel Temer <span class="flag2">⚠</span></td><td>2016–2019</td><td class="dur">2,5 anos</td><td><span class="ideo D">Direita</span></td><td style="color:var(--sub);font-size:.71rem">MDB · assumiu após Dilma · denunciado</td></tr>
+        <tr><td>Jair Bolsonaro <span class="flag2">⚠</span></td><td>2019–2023</td><td class="dur">4 anos</td><td><span class="ideo D">Direita</span></td><td style="color:var(--esq2);font-size:.71rem">PL · condenado TSE · preso 2025</td></tr>
+        <tr><td>Luiz Inácio Lula da Silva</td><td>2023–hoje</td><td class="dur">~3 anos</td><td><span class="ideo E">Esquerda</span></td><td style="color:var(--sub);font-size:.71rem">PT · 4º mandato em exercício</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Resumo de quem mais tempo ficou no poder</span><div class="sec-line"></div></div>
+  <div class="poder-grid" id="poderGrid">
+    <div class="poder-card top"><div class="poder-num">21</div><div class="poder-lbl">anos no poder</div><div class="poder-name">Ditadura Militar<br>(1964–1985)</div></div>
+    <div class="poder-card"><div class="poder-num">11</div><div class="poder-lbl">anos somados</div><div class="poder-name">Lula (PT)<br>(2003–11 + 2023–?)</div></div>
+    <div class="poder-card"><div class="poder-num">8</div><div class="poder-lbl">anos</div><div class="poder-name">FHC (PSDB)<br>(1995–2003)</div></div>
+    <div class="poder-card"><div class="poder-num">8</div><div class="poder-lbl">anos</div><div class="poder-name">Getúlio Vargas<br>(somando mandatos)</div></div>
+    <div class="poder-card"><div class="poder-num">5</div><div class="poder-lbl">anos</div><div class="poder-name">Dilma (PT)<br>(2011–2016)</div></div>
+    <div class="poder-card"><div class="poder-num">5</div><div class="poder-lbl">anos</div><div class="poder-name">JK (PSD)<br>(1956–1961)</div></div>
+  </div>
+  <div class="info-box" style="margin-top:16px">
+    <div class="info-box-title">🏆 RECORDES DO EXECUTIVO FEDERAL</div>
+    <div class="info-box-body">
+      <strong>Mais longo (período contínuo):</strong> Ditadura Militar — 21 anos (1964–1985) com 5 generais-presidentes.<br>
+      <strong>Mais longo (presidente individual):</strong> Getúlio Vargas — ~18 anos somando Estado Novo (1937–1945) + mandato eleito (1951–1954). O mais marcante da história republicana.<br>
+      <strong>Mais longo (democracia pós-64):</strong> FHC e Lula empatados com 8 anos cada, os dois únicos a cumprir 2 mandatos completos na Nova República.<br>
+      <strong>Mais curto:</strong> Jânio Quadros — 7 meses em 1961 (renúncia).<br>
+      <strong>Único a governar 4 vezes:</strong> Lula (2003–2011 + 2023–?). Nenhum outro presidente na história republicana.
+    </div>
+  </div>
+</div>
+
+<!-- LINHA DO TEMPO PROCESSOS -->
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Processos e investigações — linha do tempo</span><div class="sec-line"></div></div>
+  <div class="chart-box">
+    <canvas id="lineChart" height="260" style="max-width:100%;width:100%;display:block;margin:0 auto"></canvas>
+  </div>
+</div>
+</div><!-- end tab-presidentes -->
+
+<!-- ══════════════════════════════════════════ -->
+<!-- TAB 5 — GOVERNADORES RJ -->
+<!-- ══════════════════════════════════════════ -->
+<div id="tab-governadores" class="tab-panel">
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Governadores do Rio de Janeiro — 1982–2026</span><div class="sec-line"></div></div>
+  <div class="chart-box" style="padding:0;overflow:hidden">
+    <div class="table-wrap">
+    <table class="gov-table">
+      <thead><tr><th>Governador</th><th>Período</th><th>Anos</th><th>Partido</th><th>Status / Escândalo</th></tr></thead>
+      <tbody>
+        <tr><td>Leonel Brizola</td><td>1983–1987</td><td class="dur">4 anos</td><td><span class="ideo E">PDT</span></td><td style="color:var(--sub);font-size:.71rem">Redemocratização · CIEPs · oposição à ditadura</td></tr>
+        <tr><td>Moreira Franco</td><td>1987–1991</td><td class="dur">4 anos</td><td><span class="ideo D">PMDB</span></td><td style="color:var(--sub);font-size:.71rem">Governo conservador · sem grandes condenações</td></tr>
+        <tr class="record-row"><td>Leonel Brizola (2º)</td><td>1991–1994</td><td class="dur">3 anos</td><td><span class="ideo E">PDT</span></td><td style="color:var(--sub);font-size:.71rem">2 mandatos · mais tempo PDT no RJ <span class="record-badge">+VOTOS</span></td></tr>
+        <tr><td>Marcello Alencar</td><td>1995–1999</td><td class="dur">4 anos</td><td><span class="ideo D">PSDB</span></td><td style="color:var(--sub);font-size:.71rem">Privatizações estaduais · período estável</td></tr>
+        <tr><td>Anthony Garotinho <span class="flag2">⚠</span></td><td>1999–2002</td><td class="dur">3 anos</td><td><span class="ideo E">PDT→PSB</span></td><td style="color:var(--esq2);font-size:.71rem">Renunciou para concorrer · preso em 2016 (corrupção)</td></tr>
+        <tr><td>Benedita da Silva</td><td>2002–2003</td><td class="dur">1 ano</td><td><span class="ideo E">PT</span></td><td style="color:var(--sub);font-size:.71rem">Assumiu após Garotinho · 1ª mulher gov. RJ</td></tr>
+        <tr class="record-row"><td>Rosinha Garotinho <span class="flag2">⚠</span></td><td>2003–2007</td><td class="dur">4 anos</td><td><span class="ideo E">PSB</span></td><td style="color:var(--esq2);font-size:.71rem">Presa em 2016. Família Garotinho: marido, filha, ex-gov · todos presos</td></tr>
+        <tr><td>Sérgio Cabral <span class="flag2">⚠</span></td><td>2007–2014</td><td class="dur">7 anos <span class="record-badge">+TEMPO</span></td><td><span class="ideo D">PMDB</span></td><td style="color:var(--esq2);font-size:.71rem">Preso 2016 · 14 anos + de reclusão · maior escândalo do RJ</td></tr>
+        <tr><td>Luiz Fernando Pezão <span class="flag2">⚠</span></td><td>2014–2018</td><td class="dur">4 anos</td><td><span class="ideo D">MDB</span></td><td style="color:var(--esq2);font-size:.71rem">Preso ao vivo em 2018 · lavagem e recebimento de propina</td></tr>
+        <tr><td>Wilson Witzel <span class="flag2">⚠</span></td><td>2019–2021</td><td class="dur">2 anos</td><td><span class="ideo D">PSC</span></td><td style="color:var(--esq2);font-size:.71rem">Impeachment 2021 por desvios na saúde durante COVID</td></tr>
+        <tr><td>Cláudio Castro</td><td>2021–2027</td><td class="dur">~6 anos</td><td><span class="ideo D">PL</span></td><td style="color:var(--sub);font-size:.71rem">Assumiu após Witzel · reeleito 2022 · investigado PF (2024)</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Escândalos dos Governadores — Em detalhe</span><div class="sec-line"></div></div>
+
+  <div class="podres-grid">
+    <div class="podres-col G" style="border-top:2px solid #e63946">
+      <div class="podres-col-head" style="color:var(--esq2)">SÉRGIO CABRAL — O Maior Escândalo do RJ</div>
+      <div class="podre-item"><div class="podre-item-title" style="color:var(--esq2)">▸ PROPINA DE R$224 MILHÕES</div><div class="podre-item-body">Recebeu propina de construtoras, empreiteiras e empresas de saúde ao longo do governo. Mecanismo batizado de "clube" entre empreiteiras.</div><span class="bdg preso">PRESO · 14 anos de reclusão</span></div>
+      <div class="podre-item"><div class="podre-item-title" style="color:var(--esq2)">▸ DESVIO NAS OBRAS DA COPA E OLIMPÍADAS</div><div class="podre-item-body">Investigado pelo desvio de verbas nas obras do Maracanã, Porto Maravilha, BRT e infraestrutura olímpica. Superfaturamentos comprovados.</div><span class="bdg grave">Condenado</span></div>
+      <div class="podre-item"><div class="podre-item-title" style="color:var(--esq2)">▸ APARTAMENTO EM PARIS E CONTA NA SUÍÇA</div><div class="podre-item-body">PF encontrou apartamento de luxo em Paris e contas bancárias na Suíça com valores não declarados. Lavagem de dinheiro internacional.</div><span class="bdg preso">Condenado por lavagem</span></div>
+      <div class="podre-item"><div class="podre-item-title" style="color:var(--esq2)">▸ HELIODORO E OPERAÇÃO CHEQUINHO</div><div class="podre-item-body">Esquema de pagamento de propina via cheque para aliados políticos. Envolvia vereadores, deputados e secretários estaduais.</div><span class="bdg grave">Documentado · múltiplos condenados</span></div>
+    </div>
+
+    <div class="podres-col G" style="border-top:2px solid #f97316">
+      <div class="podres-col-head" style="color:#fb923c">WITZEL, PEZÃO & FAMÍLIA GAROTINHO</div>
+      <div class="podre-item"><div class="podre-item-title" style="color:#fb923c)">▸ WITZEL — DESVIOS NA COVID (2020)</div><div class="podre-item-body">PF investigou contratos suspeitos na saúde durante a pandemia. Sobrepreço em respiradores, hospitais de campanha e EPIs. TCE-RJ encontrou irregularidades.</div><span class="bdg preso">Impeachment · processo no STJ</span></div>
+      <div class="podre-item"><div class="podre-item-title" style="color:#fb923c">▸ PEZÃO — PRESO AO VIVO (2018)</div><div class="podre-item-body">Preso enquanto ainda era governador em exercício. Acusado de receber propina de empreiteiras desde o governo Cabral. Caso inédito na história do RJ.</div><span class="bdg preso">PRESO · condenado</span></div>
+      <div class="podre-item"><div class="podre-item-title" style="color:#fb923c">▸ GAROTINHO + ROSINHA — FAMÍLIA TODA PRESA</div><div class="podre-item-body">Anthony Garotinho preso em 2016 por compra de votos. Rosinha Garotinho (ex-governadora) presa pelo mesmo esquema. Primeira vez que um ex-casal de governadores é preso.</div><span class="bdg preso">Dois ex-governadores presos</span></div>
+      <div class="podre-item"><div class="podre-item-title" style="color:#fb923c">▸ CLÁUDIO CASTRO — INVESTIGADO (2024)</div><div class="podre-item-body">PF abriu inquérito em 2024 para apurar contratos suspeitos em saúde e educação. Governador atual afirma inocência. Investigação em andamento.</div><span class="bdg open">Investigação ativa 2024–2026</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Quem mais tempo ficou no governo do RJ</span><div class="sec-line"></div></div>
+  <div class="chart-box">
+    <div style="font-family:var(--mono);font-size:.66rem;color:var(--sub);margin-bottom:12px">▸ Anos no governo estadual (1982–2026)</div>
+    <div class="bar-group" id="barsGov">
+      <div class="bar-row"><div class="bar-lbl">Sérgio Cabral</div><div class="bar-track"><div class="bar-fill red" data-w="88">7 anos · PRESO</div></div><div class="bar-num">7 anos</div></div>
+      <div class="bar-row"><div class="bar-lbl">Cláudio Castro</div><div class="bar-track"><div class="bar-fill blue" data-w="75">~6 anos · atual</div></div><div class="bar-num">~6 anos</div></div>
+      <div class="bar-row"><div class="bar-lbl">Leonel Brizola</div><div class="bar-track"><div class="bar-fill purple" data-w="88">7 anos (2 mandatos)</div></div><div class="bar-num">7 anos</div></div>
+      <div class="bar-row"><div class="bar-lbl">Marcello Alencar</div><div class="bar-track"><div class="bar-fill gold" data-w="50">4 anos</div></div><div class="bar-num">4 anos</div></div>
+      <div class="bar-row"><div class="bar-lbl">Luiz F. Pezão</div><div class="bar-track"><div class="bar-fill orange" data-w="50">4 anos · PRESO</div></div><div class="bar-num">4 anos</div></div>
+      <div class="bar-row"><div class="bar-lbl">Rosinha Garotinho</div><div class="bar-track"><div class="bar-fill red" data-w="50">4 anos · PRESA</div></div><div class="bar-num">4 anos</div></div>
+    </div>
+  </div>
+  <div class="info-box" style="margin-top:14px">
+    <div class="info-box-title">📊 FATO ALARMANTE: RJ tem o pior histórico do Brasil</div>
+    <div class="info-box-body">Dos últimos <strong>6 governadores eleitos do Rio de Janeiro</strong>, <strong>4 foram presos ou sofreram processo de impeachment</strong>: Garotinho (preso), Rosinha (presa), Cabral (preso), Pezão (preso), Witzel (impeachment). Somente Marcello Alencar e Brizola completaram mandatos sem condenação. O Rio de Janeiro é o estado brasileiro com mais ex-governadores presos na história.</div>
+  </div>
+</div>
+</div><!-- end tab-governadores -->
+
+<!-- ══════════════════════════════════════════ -->
+<!-- TAB 6 — TEMPO NO PODER -->
+<!-- ══════════════════════════════════════════ -->
+<div id="tab-tempo" class="tab-panel">
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Ranking — Quem mais tempo ficou no poder</span><div class="sec-line"></div></div>
+
+  <div class="info-box">
+    <div class="info-box-title">🏆 TOP 5 — PRESIDENTES COM MAIS TEMPO</div>
+    <div class="info-box-body">
+      <strong>1º Getúlio Vargas</strong> — ~18 anos (1930–1945 + 1951–1954) · Ditador e presidente eleito<br>
+      <strong>2º Ditadura Militar</strong> — 21 anos como regime (1964–1985) · 5 generais<br>
+      <strong>3º Fernando Henrique Cardoso</strong> — 8 anos (1995–2003) · 2 mandatos completos<br>
+      <strong>4º Lula</strong> — 8+ anos (2003–2011 + 2023–?) · único a ganhar 4 vezes<br>
+      <strong>5º Dilma Rousseff</strong> — 5 anos (2011–2016) · impeachment antes do fim
+    </div>
+  </div>
+
+  <div class="chart-box" style="margin-top:14px">
+    <div style="font-family:var(--mono);font-size:.66rem;color:var(--sub);margin-bottom:12px">▸ Anos no poder — presidentes selecionados (democráticos e autoritários)</div>
+    <div class="bar-group" id="barsTempo">
+      <div class="bar-row"><div class="bar-lbl">Ditadura Militar</div><div class="bar-track"><div class="bar-fill red" data-w="100">1964–1985</div></div><div class="bar-num">21 anos</div></div>
+      <div class="bar-row"><div class="bar-lbl">Getúlio Vargas</div><div class="bar-track"><div class="bar-fill orange" data-w="86">~18 anos somados</div></div><div class="bar-num">~18 anos</div></div>
+      <div class="bar-row"><div class="bar-lbl">Lula (somado)</div><div class="bar-track"><div class="bar-fill red" data-w="52">8+ anos</div></div><div class="bar-num">8+ anos</div></div>
+      <div class="bar-row"><div class="bar-lbl">FHC</div><div class="bar-track"><div class="bar-fill blue" data-w="38">8 anos</div></div><div class="bar-num">8 anos</div></div>
+      <div class="bar-row"><div class="bar-lbl">JK</div><div class="bar-track"><div class="bar-fill purple" data-w="24">5 anos</div></div><div class="bar-num">5 anos</div></div>
+      <div class="bar-row"><div class="bar-lbl">Dilma</div><div class="bar-track"><div class="bar-fill red" data-w="24">5 anos</div></div><div class="bar-num">5 anos</div></div>
+      <div class="bar-row"><div class="bar-lbl">Bolsonaro</div><div class="bar-track"><div class="bar-fill blue" data-w="19">4 anos</div></div><div class="bar-num">4 anos</div></div>
+      <div class="bar-row"><div class="bar-lbl">Sarney</div><div class="bar-track"><div class="bar-fill gold" data-w="24">5 anos</div></div><div class="bar-num">5 anos</div></div>
+      <div class="bar-row"><div class="bar-lbl">Temer</div><div class="bar-track"><div class="bar-fill orange" data-w="12">2,5 anos</div></div><div class="bar-num">2,5 anos</div></div>
+      <div class="bar-row"><div class="bar-lbl">Jânio Quadros</div><div class="bar-track"><div class="bar-fill green" data-w="3">7 meses</div></div><div class="bar-num">7 meses</div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Curio­sidades — Recordes do poder</span><div class="sec-line"></div></div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div class="info-box"><div class="info-box-title">🔴 Mandato mais curto — presidente eleito</div><div class="info-box-body"><strong>Jânio Quadros</strong> — renunciou após 7 meses em 1961 (janeiro–agosto). Nunca explicou claramente os motivos. Tentou voltar ao poder anos depois e nunca conseguiu.</div></div>
+      <div class="info-box"><div class="info-box-title">🟡 Único presidente a governar 4 vezes</div><div class="info-box-body"><strong>Lula</strong> é o único na história republicana a ser eleito 4 vezes para presidente. Candidato derrotado em 1989, 1994 e 1998. Eleito em 2002, 2006, 2022. Preso em 2018 e anulado em 2021.</div></div>
+      <div class="info-box"><div class="info-box-title">🔵 1ª mulher presidente</div><div class="info-box-body"><strong>Dilma Rousseff</strong> — 1ª e única mulher a chefiar o Executivo federal (2011–2016). Sofreu impeachment, cujo mérito é debatido: parte da historiografia classifica como golpe branco, outra como legítimo processo constitucional.</div></div>
+      <div class="info-box"><div class="info-box-title">⚫ Único presidente preso na era democrática</div><div class="info-box-body"><strong>Jair Bolsonaro</strong> foi preso em 2025 pelo STF por tentativa de golpe de Estado, joias e obstrução da justiça. Primeiro ex-presidente preso na democracia pós-1988.</div></div>
+      <div class="info-box"><div class="info-box-title">🟠 Presidente que deixou o cargo com mais processos</div><div class="info-box-body"><strong>Michel Temer</strong> foi denunciado duas vezes pelo Procurador-Geral da República enquanto estava no cargo, porém a Câmara rejeitou as denúncias. Foi preso brevemente em 2019 por investigação de corrupção, mas solto logo após.</div></div>
+    </div>
+  </div>
+  </div>
+
+  <!-- TOTALIZADOR ESQUERDA vs DIREITA -->
+  <div class="sec">
+    <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Esquerda vs Direita — Total de anos no poder (1889–2026)</span><div class="sec-line"></div></div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:18px">
+      <div style="background:rgba(230,57,70,.07);border:1px solid rgba(230,57,70,.3);border-radius:10px;padding:16px;text-align:center">
+        <div style="font-family:var(--head);font-size:2.8rem;color:var(--esq2);line-height:1">52</div>
+        <div style="font-family:var(--mono);font-size:.62rem;color:var(--sub);margin-top:5px">anos — ESQUERDA<br>Vargas·Goulart·Dilma·Lula</div>
+      </div>
+      <div style="background:rgba(29,124,255,.07);border:1px solid rgba(29,124,255,.3);border-radius:10px;padding:16px;text-align:center">
+        <div style="font-family:var(--head);font-size:2.8rem;color:var(--dir2);line-height:1">75</div>
+        <div style="font-family:var(--mono);font-size:.62rem;color:var(--sub);margin-top:5px">anos — DIREITA<br>incluindo ditadura militar</div>
+      </div>
+      <div style="background:rgba(148,163,184,.05);border:1px solid rgba(148,163,184,.15);border-radius:10px;padding:16px;text-align:center">
+        <div style="font-family:var(--head);font-size:2.8rem;color:var(--sub);line-height:1">10</div>
+        <div style="font-family:var(--mono);font-size:.62rem;color:var(--sub);margin-top:5px">anos — CENTRO<br>JK · Itamar · outros</div>
+      </div>
+    </div>
+
+    <!-- barra visual total -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:18px">
+      <div style="font-family:var(--mono);font-size:.62rem;color:var(--sub);margin-bottom:10px;letter-spacing:.06em">▸ PROPORÇÃO DO TEMPO NO PODER (1889–2026) — 137 anos de república</div>
+      <div style="height:28px;border-radius:6px;overflow:hidden;display:flex">
+        <div style="width:54.7%;background:rgba(29,124,255,.75);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.6rem;color:#fff;white-space:nowrap">Direita 55%</div>
+        <div style="width:38%;background:rgba(230,57,70,.75);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.6rem;color:#fff;white-space:nowrap">Esquerda 38%</div>
+        <div style="width:7.3%;background:rgba(139,92,246,.6);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.55rem;color:#fff;white-space:nowrap">C7%</div>
+      </div>
+      <div style="font-family:var(--mono);font-size:.6rem;color:var(--sub);margin-top:8px">* Ditadura Militar (1964–1985) contabilizada como Direita. Vargas (1930–1945) contabilizado como Esquerda/Nacional-desenvolvimentista.</div>
+    </div>
+
+    <!-- TABELA ANO A ANO -->
+    <div style="font-family:var(--mono);font-size:.68rem;color:var(--gold);letter-spacing:.08em;margin-bottom:10px">▸ TODOS OS ANOS — 1889 a 2026 — presidente, espectro e destino</div>
+    <div class="chart-box" style="padding:0;overflow:hidden">
+      <div class="table-wrap">
+      <table class="gov-table" style="min-width:560px">
+        <thead><tr><th>Período</th><th>Presidente</th><th>Partido / Regime</th><th>Espectro</th><th>Anos</th><th>Destino</th></tr></thead>
+        <tbody>
+          <!-- REPÚBLICA VELHA -->
+          <tr style="background:rgba(255,255,255,.02)"><td colspan="6" style="font-family:var(--mono);font-size:.6rem;color:var(--gold);padding:6px 12px;letter-spacing:.1em">── REPÚBLICA VELHA (1889–1930) ──</td></tr>
+          <tr><td>1889–1891</td><td>Deodoro da Fonseca</td><td>Militar</td><td><span class="ideo M">Regime</span></td><td class="dur">2 anos</td><td style="color:var(--sub);font-size:.71rem">Renunciou após golpe frustrado</td></tr>
+          <tr><td>1891–1894</td><td>Floriano Peixoto</td><td>Militar</td><td><span class="ideo M">Regime</span></td><td class="dur">3 anos</td><td style="color:var(--sub);font-size:.71rem">O "Marechal de Ferro"</td></tr>
+          <tr><td>1894–1898</td><td>Prudente de Morais</td><td>PRP (SP)</td><td><span class="ideo D">Direita</span></td><td class="dur">4 anos</td><td style="color:var(--sub);font-size:.71rem">1º civil eleito presidente</td></tr>
+          <tr><td>1898–1902</td><td>Campos Sales</td><td>PRP (SP)</td><td><span class="ideo D">Direita</span></td><td class="dur">4 anos</td><td style="color:var(--sub);font-size:.71rem">Política dos governadores</td></tr>
+          <tr><td>1902–1906</td><td>Rodrigues Alves</td><td>PRP (SP)</td><td><span class="ideo D">Direita</span></td><td class="dur">4 anos</td><td style="color:var(--sub);font-size:.71rem">Reforma do Rio de Janeiro</td></tr>
+          <tr><td>1906–1909</td><td>Afonso Pena</td><td>PRM (MG)</td><td><span class="ideo D">Direita</span></td><td class="dur">3 anos</td><td style="color:var(--sub);font-size:.71rem">Morreu no cargo</td></tr>
+          <tr><td>1909–1910</td><td>Nilo Peçanha</td><td>PRM</td><td><span class="ideo D">Direita</span></td><td class="dur">1 ano</td><td style="color:var(--sub);font-size:.71rem">Assumiu após morte de Pena</td></tr>
+          <tr><td>1910–1914</td><td>Hermes da Fonseca</td><td>Militar</td><td><span class="ideo M">Regime</span></td><td class="dur">4 anos</td><td style="color:var(--sub);font-size:.71rem">Sobrinho de Deodoro · militarismo</td></tr>
+          <tr><td>1914–1918</td><td>Venceslau Brás</td><td>PRM (MG)</td><td><span class="ideo D">Direita</span></td><td class="dur">4 anos</td><td style="color:var(--sub);font-size:.71rem">Brasil na 1ª Guerra Mundial</td></tr>
+          <tr><td>1918–1919</td><td>Rodrigues Alves (2º)</td><td>PRP (SP)</td><td><span class="ideo D">Direita</span></td><td class="dur">1 ano</td><td style="color:var(--sub);font-size:.71rem">Morreu antes de tomar posse</td></tr>
+          <tr><td>1919–1922</td><td>Epitácio Pessoa</td><td>PRP (PB)</td><td><span class="ideo D">Direita</span></td><td class="dur">3 anos</td><td style="color:var(--sub);font-size:.71rem">Revolução Tenentista 1922</td></tr>
+          <tr><td>1922–1926</td><td>Artur Bernardes</td><td>PRM (MG)</td><td><span class="ideo D">Direita</span></td><td class="dur">4 anos</td><td style="color:var(--sub);font-size:.71rem">Estado de sítio quase contínuo</td></tr>
+          <tr><td>1926–1930</td><td>Washington Luís</td><td>PRP (SP)</td><td><span class="ideo D">Direita</span></td><td class="dur">4 anos</td><td style="color:var(--esq2);font-size:.71rem">Deposto pelo golpe de 1930</td></tr>
+
+          <!-- ERA VARGAS -->
+          <tr style="background:rgba(255,255,255,.02)"><td colspan="6" style="font-family:var(--mono);font-size:.6rem;color:var(--gold);padding:6px 12px;letter-spacing:.1em">── ERA VARGAS (1930–1945) ──</td></tr>
+          <tr class="record-row"><td>1930–1945</td><td>Getúlio Vargas <span class="flag2">⚠</span></td><td>PTB / Estado Novo</td><td><span class="ideo E">Esquerda</span></td><td class="dur">15 anos <span class="record-badge">2º MAIS LONGO</span></td><td style="color:var(--esq2);font-size:.71rem">Ditadura 1937–1945 · Estado Novo</td></tr>
+          <tr><td>1945–1946</td><td>José Linhares</td><td>Nenhum (STF)</td><td><span class="ideo C">Centro</span></td><td class="dur">3 meses</td><td style="color:var(--sub);font-size:.71rem">Presidência de transição</td></tr>
+
+          <!-- REPÚBLICA NOVA / DEMOCRÁTICA -->
+          <tr style="background:rgba(255,255,255,.02)"><td colspan="6" style="font-family:var(--mono);font-size:.6rem;color:var(--gold);padding:6px 12px;letter-spacing:.1em">── REPÚBLICA DEMOCRÁTICA (1946–1964) ──</td></tr>
+          <tr><td>1946–1951</td><td>Eurico Gaspar Dutra</td><td>PSD</td><td><span class="ideo D">Direita</span></td><td class="dur">5 anos</td><td style="color:var(--sub);font-size:.71rem">1º eleito direto pós-Vargas</td></tr>
+          <tr><td>1951–1954</td><td>Getúlio Vargas (2º) <span class="flag2">⚠</span></td><td>PTB</td><td><span class="ideo E">Esquerda</span></td><td class="dur">3 anos</td><td style="color:var(--esq2);font-size:.71rem">Suicidou-se no cargo · carta-testamento</td></tr>
+          <tr><td>1954–1955</td><td>Café Filho</td><td>PSP</td><td><span class="ideo D">Direita</span></td><td class="dur">1 ano</td><td style="color:var(--sub);font-size:.71rem">Assumiu após morte de Vargas</td></tr>
+          <tr><td>1955</td><td>Carlos Luz / Nereu Ramos</td><td>PSD/UDN</td><td><span class="ideo D">Direita</span></td><td class="dur">dias</td><td style="color:var(--sub);font-size:.71rem">Interinidade · contracolpe</td></tr>
+          <tr><td>1956–1961</td><td>Juscelino Kubitschek</td><td>PSD</td><td><span class="ideo C">Centro</span></td><td class="dur">5 anos</td><td style="color:var(--sub);font-size:.71rem">Brasília · "50 anos em 5"</td></tr>
+          <tr><td>1961</td><td>Jânio Quadros <span class="flag2">⚠</span></td><td>PTN/UDN</td><td><span class="ideo D">Direita</span></td><td class="dur">7 meses</td><td style="color:var(--esq2);font-size:.71rem">Renúncia inexplicada</td></tr>
+          <tr><td>1961–1964</td><td>João Goulart (Jango) <span class="flag2">⚠</span></td><td>PTB</td><td><span class="ideo E">Esquerda</span></td><td class="dur">2,5 anos</td><td style="color:var(--esq2);font-size:.71rem">Deposto pelo golpe militar · exilado</td></tr>
+
+          <!-- DITADURA MILITAR -->
+          <tr style="background:rgba(255,255,255,.02)"><td colspan="6" style="font-family:var(--mono);font-size:.6rem;color:var(--gold);padding:6px 12px;letter-spacing:.1em">── DITADURA MILITAR (1964–1985) — 21 ANOS ──</td></tr>
+          <tr class="record-row"><td>1964–1967</td><td>Castelo Branco</td><td>ARENA (Militar)</td><td><span class="ideo M">Ditadura</span></td><td class="dur">3 anos</td><td style="color:var(--esq2);font-size:.71rem">1º general presidente · AI-1</td></tr>
+          <tr><td>1967–1969</td><td>Costa e Silva</td><td>ARENA (Militar)</td><td><span class="ideo M">Ditadura</span></td><td class="dur">2 anos</td><td style="color:var(--esq2);font-size:.71rem">AI-5 · anos de chumbo</td></tr>
+          <tr><td>1969–1974</td><td>Emílio Médici</td><td>ARENA (Militar)</td><td><span class="ideo M">Ditadura</span></td><td class="dur">5 anos</td><td style="color:var(--esq2);font-size:.71rem">Maior repressão · "milagre econômico"</td></tr>
+          <tr><td>1974–1979</td><td>Ernesto Geisel</td><td>ARENA (Militar)</td><td><span class="ideo M">Ditadura</span></td><td class="dur">5 anos</td><td style="color:var(--sub);font-size:.71rem">Abertura "lenta e gradual"</td></tr>
+          <tr><td>1979–1985</td><td>João Figueiredo</td><td>PDS (Militar)</td><td><span class="ideo M">Ditadura</span></td><td class="dur">6 anos</td><td style="color:var(--sub);font-size:.71rem">Anistia · último militar · "Diretas Já"</td></tr>
+
+          <!-- NOVA REPÚBLICA -->
+          <tr style="background:rgba(255,255,255,.02)"><td colspan="6" style="font-family:var(--mono);font-size:.6rem;color:var(--gold);padding:6px 12px;letter-spacing:.1em">── NOVA REPÚBLICA (1985–2026) ──</td></tr>
+          <tr><td>1985–1990</td><td>José Sarney</td><td>PMDB</td><td><span class="ideo D">Direita</span></td><td class="dur">5 anos</td><td style="color:var(--sub);font-size:.71rem">Redemocratização · Cruzado</td></tr>
+          <tr><td>1990–1992</td><td>Fernando Collor <span class="flag2">⚠</span></td><td>PRN</td><td><span class="ideo D">Direita</span></td><td class="dur">2 anos</td><td style="color:var(--esq2);font-size:.71rem">Impeachment · corrupção</td></tr>
+          <tr><td>1992–1995</td><td>Itamar Franco</td><td>PMDB</td><td><span class="ideo C">Centro</span></td><td class="dur">2,5 anos</td><td style="color:var(--sub);font-size:.71rem">Assumiu após Collor · Plano Real</td></tr>
+          <tr class="record-row"><td>1995–2003</td><td>Fernando Henrique Cardoso</td><td>PSDB</td><td><span class="ideo D">Direita</span></td><td class="dur">8 anos <span class="record-badge">2 MANDATOS</span></td><td style="color:var(--sub);font-size:.71rem">Estabilidade · privatizações</td></tr>
+          <tr class="record-row"><td>2003–2011</td><td>Lula (1º e 2º) <span class="flag2">⚠</span></td><td>PT</td><td><span class="ideo E">Esquerda</span></td><td class="dur">8 anos <span class="record-badge">2 MANDATOS</span></td><td style="color:var(--sub);font-size:.71rem">Mensalão · Bolsa Família · crescimento</td></tr>
+          <tr><td>2011–2016</td><td>Dilma Rousseff <span class="flag2">⚠</span></td><td>PT</td><td><span class="ideo E">Esquerda</span></td><td class="dur">5 anos</td><td style="color:var(--esq2);font-size:.71rem">1ª mulher presidente · impeachment</td></tr>
+          <tr><td>2016–2019</td><td>Michel Temer <span class="flag2">⚠</span></td><td>MDB</td><td><span class="ideo D">Direita</span></td><td class="dur">2,5 anos</td><td style="color:var(--sub);font-size:.71rem">Assumiu após Dilma · denunciado</td></tr>
+          <tr><td>2019–2023</td><td>Jair Bolsonaro <span class="flag2">⚠</span></td><td>PL</td><td><span class="ideo D">Direita</span></td><td class="dur">4 anos</td><td style="color:var(--esq2);font-size:.71rem">Condenado TSE · preso 2025</td></tr>
+          <tr><td>2023–hoje</td><td>Lula (3º e 4º)</td><td>PT</td><td><span class="ideo E">Esquerda</span></td><td class="dur">~3 anos</td><td style="color:var(--sub);font-size:.71rem">Em exercício · outubro 2026</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <!-- TOTAIS POR ESPECTRO (GRÁFICO) -->
+    <div class="chart-box" style="margin-top:16px">
+      <div style="font-family:var(--mono);font-size:.66rem;color:var(--sub);margin-bottom:12px">▸ TOTAL DE ANOS POR ESPECTRO (1889–2026)</div>
+      <div class="bar-group" id="barsEspectro">
+        <div class="bar-row"><div class="bar-lbl">Direita / Conservador</div><div class="bar-track"><div class="bar-fill blue" data-w="100">~75 anos (sem ditadura: ~54 anos)</div></div><div class="bar-num">75 anos</div></div>
+        <div class="bar-row"><div class="bar-lbl">Ditadura Militar</div><div class="bar-track"><div class="bar-fill red" data-w="29">1964–1985</div></div><div class="bar-num">21 anos</div></div>
+        <div class="bar-row"><div class="bar-lbl">Esquerda / Progressista</div><div class="bar-track"><div class="bar-fill red" data-w="69">Vargas+Goulart+PT</div></div><div class="bar-num">~52 anos</div></div>
+        <div class="bar-row"><div class="bar-lbl">Centro / Liberal</div><div class="bar-track"><div class="bar-fill purple" data-w="13">JK+Itamar+outros</div></div><div class="bar-num">~10 anos</div></div>
+        <div class="bar-row"><div class="bar-lbl">Militar / Transitório</div><div class="bar-track"><div class="bar-fill gold" data-w="8">Deodoro+Floriano+etc</div></div><div class="bar-num">~6 anos</div></div>
+      </div>
+      <div style="margin-top:12px;padding:10px 12px;background:rgba(230,57,70,.06);border-radius:7px;border-left:3px solid var(--esq);font-family:var(--mono);font-size:.68rem;color:var(--sub);line-height:1.7">
+        <strong style="color:var(--ink2)">Conclusão:</strong> A <strong style="color:var(--dir2)">Direita governou mais tempo</strong> na história republicana brasileira — mas se excluirmos a ditadura militar, o placar fica mais equilibrado. A <strong style="color:var(--esq2)">Esquerda dominou via Getúlio Vargas</strong> (15 anos) e Lula (11+ anos). O <strong style="color:#a78bfa">Centro</strong> sempre foi o elo de transição, nunca o poder dominante.
+      </div>
+    </div>
+  </div>
+
+</div>
+</div><!-- end tab-tempo -->
+
+<!-- ══════════════════════════════════════════ -->
+<!-- TAB 7 — VOTO -->
+<!-- ══════════════════════════════════════════ -->
+<div id="tab-voto" class="tab-panel">
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Posição Editorial — Para quem votar</span><div class="sec-line"></div></div>
+
+  <div class="voto-rec">
+    <div class="vr-tag">POSIÇÃO EDITORIAL BASEADA NOS FATOS LEVANTADOS</div>
+    <div class="vr-number">13</div>
+    <div class="vr-subtitle">Lula — PT</div>
+    <div class="vr-body">Com base nos fatos documentados: <strong>Lula apresenta o menor risco para o Brasil em outubro de 2026.</strong> Sem investigação criminal ativa. Defende a soberania nacional. Histórico de corrupção grave — mas condenações anuladas por vício processual. Flávio chega com investigação ativa da PF, padrão ético grave e declarações comprometendo recursos estratégicos do Brasil.</div>
+    <div class="vr-reasons">
+      <div class="vr-reason"><div class="vr-dot"></div><span>Sem investigação criminal ativa em 2026. Flávio tem a investigação Dark Horse da PF em curso.</span></div>
+      <div class="vr-reason"><div class="vr-dot"></div><span>Não prometeu entregar minerais críticos a potência estrangeira. Flávio fez essa declaração na CPAC.</span></div>
+      <div class="vr-reason"><div class="vr-dot"></div><span>Nunca assinou recurso para proteger PM que matou criança de 5 anos. Flávio assinou.</span></div>
+      <div class="vr-reason"><div class="vr-dot"></div><span>3 mandatos presidenciais com experiência executiva real. Flávio nunca governou no executivo.</span></div>
+    </div>
+    <div class="vr-caveat">
+      <strong>Este não é um endosso sem ressalvas.</strong> Lula governou durante o Mensalão e o Petrolão. Apoiou regimes autoritários. A escolha é entre dois candidatos imperfeitos. Esta análise indica que os riscos de Flávio são mais imediatos para o futuro do país.
+    </div>
+  </div>
+
+  <div style="margin-top:14px">
+    <div class="voto-dois">
+      <div class="vd-tag">ARGUMENTOS PARA VOTAR NO 22</div>
+      <div class="vd-title">Flávio Bolsonaro — PL</div>
+      <div class="vd-body">Para eleitores que priorizam outras dimensões, há argumentos legítimos para o voto 22:</div>
+      <div class="vd-reasons">
+        <div class="vd-reason"><div class="vd-dot"></div><span>Sem condenação formal válida em vigor. Rachadinha prescrita sem julgamento de mérito.</span></div>
+        <div class="vd-reason"><div class="vd-dot"></div><span>Para eleitores que avaliam o governo Lula 3 negativamente em termos fiscais, segurança pública e inflação.</span></div>
+        <div class="vd-reason"><div class="vd-dot"></div><span>Representa renovação geracional (44 anos) para quem quer alternância ao PT após 4 mandatos.</span></div>
+        <div class="vd-reason"><div class="vd-dot"></div><span>Para eleitores alinhados com pauta conservadora: valores cristãos, agenda de segurança, menos Estado.</span></div>
+      </div>
+      <div class="vd-caveat">⚠ Riscos do voto 22: investigação ativa da PF; declarações sobre soberania e Trump; padrão ético documentado (Ana Clara, juíza Acioli); fiador preso (Jair Bolsonaro).</div>
+    </div>
+  </div>
+</div>
+
+<!-- RADAR -->
+<div class="sec">
+  <div class="sec-hd"><div class="sec-pip"></div><span class="sec-lbl">Radar comparativo</span><div class="sec-line"></div></div>
+  <div class="chart-box">
+    <canvas id="radarCombo" height="300" style="max-width:100%;width:100%;display:block;margin:0 auto"></canvas>
+    <div style="display:flex;justify-content:center;gap:24px;margin-top:12px">
+      <div style="display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.68rem;color:var(--sub)"><div style="width:16px;height:3px;background:var(--esq);border-radius:2px"></div>Lula</div>
+      <div style="display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.68rem;color:var(--sub)"><div style="width:16px;height:3px;background:var(--dir);border-radius:2px"></div>Flávio</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end tab-voto -->
+
+<footer>
+  <strong style="color:var(--gold)">Fontes:</strong> STF · STJ · TSE · MP-RJ · Correio Braziliense · O Cafezinho · Sul21 · Outras Palavras · SBT News · Diário do Grande ABC · OHoje.com · Revista Fórum · Painel Político · Agência Pública · Piauí · UOL · Metrópoles · CGU · AGU · TCE-RJ · IBGE.<br>
+  Atualização: <strong style="color:var(--ink2)">outubro/2026</strong>. Esta página apresenta uma posição editorial baseada em fatos documentados. O voto é pessoal e intransferível.
+</footer>
+
+</div><!-- end wrap -->
+
+<script>
+// ── TABS ──
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  // re-animate bars in the new tab
+  setTimeout(() => animAllBars(), 50);
+}
+
+// ── ANIMATE BARS ──
+function easeOut(t){return 1-Math.pow(1-t,3)}
+function animBars(container){
+  const fills = container.querySelectorAll('.bar-fill,.sc-bar-fill');
+  fills.forEach(f => { f.style.width='0%' });
+  let s = null;
+  function step(ts){
+    if(!s) s=ts;
+    const p = easeOut(Math.min((ts-s)/1400,1));
+    fills.forEach(f => { const w=parseFloat(f.dataset.w)||0; f.style.width=(w*p)+'%' });
+    if(p<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+function animAllBars(){
+  ['barsMain','scBars','barsPartido','barsGov','barsTempo','barsEspectro'].forEach(id => {
+    const el = document.getElementById(id); if(el) animBars(el);
+  });
+}
+// IntersectionObserver for each bar group
+['barsMain','scBars','barsPartido','barsGov','barsTempo','barsEspectro'].forEach(id => {
+  const el = document.getElementById(id); if(!el) return;
+  animBars(el);
+  const io = new IntersectionObserver(e => { if(e[0].isIntersecting){ animBars(el); io.disconnect() }},{threshold:.1});
+  io.observe(el);
+});
+
+// ── RADAR ──
+(function(){
+  const canvas = document.getElementById('radarCombo'); if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  function drawRadar(){
+    const W = canvas.parentElement.offsetWidth||500, H = 300;
+    canvas.width = W; canvas.height = H;
+    const cx = W/2, cy = H/2-10, r = Math.min(W,H)*0.32;
+    const labels = ['Corrupção direta','Polêmicas éticas','Inv. ativas 2026','Risco soberania','Processos históricos','Impacto institucional'];
+    const lula = [9,7,1,1,9,8];
+    const flavio = [6,8,5,8,6,5];
+    const sides = labels.length; const step = Math.PI*2/sides;
+    function xp(i,v){return cx+Math.cos(i*step-Math.PI/2)*(v/10)*r}
+    function yp(i,v){return cy+Math.sin(i*step-Math.PI/2)*(v/10)*r}
+    let prog=0, started=false;
+    const io = new IntersectionObserver(e => {
+      if(e[0].isIntersecting && !started){ started=true; io.disconnect();
+        let s=null; function tick(ts){if(!s)s=ts; prog=Math.min((ts-s)/1200,1); render(easeOut(prog)); if(prog<1)requestAnimationFrame(tick)}
+        requestAnimationFrame(tick); }
+    },{threshold:.3});
+    io.observe(canvas);
+    function render(p){
+      ctx.clearRect(0,0,W,H);
+      const fs = Math.max(8,W*0.013);
+      for(let ring=1;ring<=5;ring++){
+        ctx.beginPath();
+        for(let i=0;i<sides;i++){const x=cx+Math.cos(i*step-Math.PI/2)*(ring/5)*r;const y=cy+Math.sin(i*step-Math.PI/2)*(ring/5)*r;i===0?ctx.moveTo(x,y):ctx.lineTo(x,y)}
+        ctx.closePath(); ctx.strokeStyle=ring===5?'rgba(244,166,20,.3)':'rgba(255,255,255,.06)'; ctx.lineWidth=1; ctx.stroke();
+      }
+      for(let i=0;i<sides;i++){
+        const ax=cx+Math.cos(i*step-Math.PI/2)*r; const ay=cy+Math.sin(i*step-Math.PI/2)*r;
+        ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(ax,ay); ctx.strokeStyle='rgba(255,255,255,.07)'; ctx.lineWidth=1; ctx.stroke();
+        const lx=cx+Math.cos(i*step-Math.PI/2)*(r+26); const ly=cy+Math.sin(i*step-Math.PI/2)*(r+26);
+        ctx.fillStyle='rgba(96,104,128,.9)'; ctx.font=`${fs}px IBM Plex Mono,monospace`; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(labels[i],lx,ly);
+      }
+      ctx.beginPath(); lula.forEach((v,i)=>{const x=xp(i,v*p),y=yp(i,v*p);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y)});
+      ctx.closePath(); ctx.fillStyle='rgba(230,57,70,.14)'; ctx.fill(); ctx.strokeStyle='rgba(230,57,70,.9)'; ctx.lineWidth=2; ctx.stroke();
+      lula.forEach((v,i)=>{ctx.beginPath();ctx.arc(xp(i,v*p),yp(i,v*p),3.5,0,Math.PI*2);ctx.fillStyle='#e63946';ctx.fill()});
+      ctx.beginPath(); flavio.forEach((v,i)=>{const x=xp(i,v*p),y=yp(i,v*p);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y)});
+      ctx.closePath(); ctx.fillStyle='rgba(29,124,255,.14)'; ctx.fill(); ctx.strokeStyle='rgba(29,124,255,.9)'; ctx.lineWidth=2; ctx.stroke();
+      flavio.forEach((v,i)=>{ctx.beginPath();ctx.arc(xp(i,v*p),yp(i,v*p),3.5,0,Math.PI*2);ctx.fillStyle='#1d7cff';ctx.fill()});
+    }
+    render(0);
+  }
+  drawRadar();
+  window.addEventListener('resize', drawRadar);
+})();
+
+// ── LINE CHART ──
+(function(){
+  const canvas = document.getElementById('lineChart'); if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  function drawLine(){
+    const W = canvas.parentElement.offsetWidth||800, H = 260;
+    canvas.width = W; canvas.height = H;
+    const years=[2003,2005,2007,2010,2012,2014,2016,2018,2019,2020,2021,2022,2023,2024,2025,2026];
+    const lulaD=[0,0,1,2,5,7,8,9,8,7,4,4,4,4,4,4];
+    const flavioD=[0,0,0,0,0,0,1,2,3,4,5,4,3,4,4,5];
+    const pad={l:44,r:16,t:28,b:38}; const maxV=10;
+    function xp(i){return pad.l+(i/(years.length-1))*(W-pad.l-pad.r)}
+    function yp(v){return pad.t+(1-v/maxV)*(H-pad.t-pad.b)}
+    let prog=0, started=false;
+    const io = new IntersectionObserver(e => {
+      if(e[0].isIntersecting && !started){ started=true; io.disconnect();
+        let s=null; function tick(ts){if(!s)s=ts; prog=Math.min((ts-s)/1600,1); render(easeOut(prog)); if(prog<1)requestAnimationFrame(tick)}
+        requestAnimationFrame(tick); }
+    },{threshold:.3});
+    io.observe(canvas);
+    function render(p){
+      ctx.clearRect(0,0,W,H);
+      const fs=Math.max(8,W*0.011);
+      for(let v=0;v<=10;v+=2){
+        ctx.beginPath(); ctx.moveTo(pad.l,yp(v)); ctx.lineTo(W-pad.r,yp(v));
+        ctx.strokeStyle='rgba(255,255,255,.05)'; ctx.lineWidth=1; ctx.setLineDash([3,4]); ctx.stroke(); ctx.setLineDash([]);
+        ctx.fillStyle='rgba(96,104,128,.6)'; ctx.font=`${fs}px IBM Plex Mono,monospace`; ctx.textAlign='right'; ctx.fillText(v,pad.l-5,yp(v)+4);
+      }
+      years.forEach((y,i)=>{
+        if(i%2===0||i===years.length-1){ctx.fillStyle='rgba(96,104,128,.6)';ctx.font=`${fs-1}px IBM Plex Mono,monospace`;ctx.textAlign='center';ctx.fillText(y,xp(i),H-6)}
+      });
+      const pts=Math.max(2,Math.round(p*(years.length-1))+1);
+      function drawArea(data,c){ctx.beginPath();ctx.moveTo(xp(0),yp(0));for(let i=0;i<pts&&i<data.length;i++)ctx.lineTo(xp(i),yp(data[i]));ctx.lineTo(xp(Math.min(pts-1,data.length-1)),yp(0));ctx.closePath();ctx.fillStyle=c;ctx.fill()}
+      drawArea(lulaD,'rgba(230,57,70,.06)'); drawArea(flavioD,'rgba(29,124,255,.06)');
+      function drawLine2(data,color){ctx.beginPath();for(let i=0;i<pts&&i<data.length;i++){i===0?ctx.moveTo(xp(i),yp(data[i])):ctx.lineTo(xp(i),yp(data[i]))}ctx.strokeStyle=color;ctx.lineWidth=2;ctx.stroke();for(let i=0;i<pts&&i<data.length;i++){ctx.beginPath();ctx.arc(xp(i),yp(data[i]),3,0,Math.PI*2);ctx.fillStyle=color;ctx.fill()}}
+      drawLine2(lulaD,'rgba(230,57,70,1)'); drawLine2(flavioD,'rgba(29,124,255,1)');
+      [[pad.l,'rgba(230,57,70,1)','Lula 13'],[pad.l+70,'rgba(29,124,255,1)','Flávio 22']].forEach(([x,c,n])=>{ctx.fillStyle=c;ctx.fillRect(x,10,14,2.5);ctx.fillStyle='rgba(148,163,184,.7)';ctx.font=`${fs}px IBM Plex Mono,monospace`;ctx.textAlign='left';ctx.fillText(n,x+18,14)});
+    }
+    render(0);
+  }
+  drawLine();
+  window.addEventListener('resize', drawLine);
+})();
+</script>
+</body>
+</html>
